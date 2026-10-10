@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банківська компанія</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container-wrap">
+        <div class="background-img"></div>
+        <div class="background-wrap">
+            <header class="navbar">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="assets/images/icons/logo.png" alt="" class="logo">
+                        <span class="logo-text">YourBanK</span>
+                    </a>
+                </div>
+                <nav class="desktop-menu">
+                    <ul>
+                        <li><a href="#">Головна</a></li>
+                        <li><a href="#">Кар'єра</a></li>
+                        <li><a href="#">Про нас</a></li>
+                        <li><a href="#">Безпека</a></li>
+                    </ul>
+                </nav>
+                <div class="navbar-actions">
+                    <a href="#" class="btn-signup" id="openBtnSignupDesktop">Реєстрація</a>
+                    <a href="#" class="btn-login" id="openBtnLoginDesktop">Вхід</a>
+                </div>
+                <div class="burger-menu" id="burgerToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <nav class="mobile-menu" id="mobileMenu">
+                    <ul>
+                        <li><a href="#">Головна</a></li>
+                        <li><a href="#">Кар'єра</a></li>
+                        <li><a href="#">Про нас</a></li>
+                        <li><a href="#">Безпека</a></li>
+                    </ul>
+                    <button class="mobile-sign-up" id="openBtnSignup">Реєстрація</button>
+                    <button class="mobile-login" id="openBtnLogin">Вхід</button>
+                </nav>
+            </header>
+        </div>
+
+        <section class="main-section">
+            <div class="main-page ">
+                <div class="one-page animate-text">
+                    <div class="top-text-container">
+                        <img src="assets/images/icons/mark-main-section.png" alt="" class="mark-logo">
+                        <p class=" top-text">Без ТОВ, без перевірки кредитної історії.</p>
+                    </div>
+                    <div class="text-welcome">
+                        <h1>Ласкаво просимо до YourBank, що розширює ваші <span class="yellow">фінансові
+                                можливості</span></h1>
+                        <p class="text-under-welcome">У YourBank наша місія — надавати комплексні банківські рішення,
+                            які допомагають приватним особам та бізнесу досягати своїх фінансових цілей. Ми прагнемо
+                            надавати персоналізовані та інноваційні послуги, що ставлять потреби наших клієнтів на перше
+                            місце</p>
+                        <button class="btn btn-account">Відкрити рахунок</button>
+                    </div>
+                </div>
+                <div class="transfers-section animate-box slide-right">
+                    <div class="main-transactions">
+                        <p class="transaction-title">Ваші транзакції</p>
+                        <div class="transactions-list">
+                            <div class="transactions-card card-one">
+                                <div class="transaction-icon">
+                                    <i class="fa-solid fa-right-left"></i>
+                                </div>
+                                <div class="transaction-detail">
+                                    <p class="transaction-type">Транзакція</p>
+                                    <span class="transaction-name">Джоел Кені</span>
+                                </div>
+                                <span class="transfer-amount">-$68.00</span>
+                            </div>
+                            <div class="transactions-card card-two">
+                                <div class="transaction-icon">
+                                    <i class="fa-solid fa-right-left"></i>
+                                </div>
+                                <div class="transaction-detail">
+                                    <p class="transaction-type">Транзакція</p>
+                                    <span class="transaction-name">Марк Сміт</span>
+                                </div>
+                                <span class="transfer-amount">-$68.00</span>
+                            </div>
+                            <div class="transactions-card card-three">
+                                <div class="transaction-icon">
+                                    <i class="fa-solid fa-right-left"></i>
+                                </div>
+                                <div class="transaction-detail">
+                                    <p class="transaction-type">Транзакція</p>
+                                    <span class="transaction-name">Ленен Рой</span>
+                                </div>
+                                <span class="transfer-amount">-$68.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exchange-section">
+                        <p class="exchange-title">Обмін валют</p>
+                        <div class="exchange-currency">
+                            <div class="exchange-column">
+                                <div class="exchange-card top-card">
+                                    <div class="currency-header">
+                                        <img src="assets/images/indian-flag.png" alt="" class="exchange-logo">
+                                        <p class="currency">INR</p>
+                                    </div>
+                                    <span class="long-currency">Індійська рупія</span>
+                                </div>
+                                <div class="exchange-card">
+                                    <span class="exchange-amount">5,0000</span>
+                                </div>
+                            </div>
+                            <div class="exchange-column">
+                                <div class="exchange-card top-card">
+                                    <div class="currency-header">
+                                        <img src="assets/images/usa-flag.png" alt="" class="exchange-logo">
+                                        <p class="currency">USD</p>
+                                    </div>
+                                    <span class="long-currency">Долар США</span>
+                                </div>
+                                <div class="exchange-card">
+                                    <span class="exchange-amount">12.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="background-arrows">
+                            <img src="assets/images/main-section-arrows.png" alt="">
+                        </div>
+                        <div class="income-transfer">
+                            <div class="income-logo">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div class="transaction-detail">
+                                <p class="income-transfer-amount">+ $5000,00</p>
+                                <span class="monthly-income">Щомісячний дохід</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="exchange-btn">Обміняти</button>
+                    <div class="supported-currency">
+                        <span class="supported-text">Валюти, що підтримуються</span>
+                        <div class="currency-icons-list">
+                            <div class="currency-icon">
+                                <img src="assets/images//icons/dollar-icon.png" alt="" class="supported-icon">
+                            </div>
+                            <div class="currency-icon">
+                                <img src="assets/images/icons/euro-icon.png" alt="" class="supported-icon">
+                            </div>
+                            <div class="currency-icon">
+                                <img src="assets/images/icons/bitcoin-icon.png" alt="" class="supported-icon">
+                            </div>
+                            <div class="currency-icon">
+                                <img src="assets/images/icons/ethereum-icon.png" alt="" class="supported-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="products-section">
+            <div class="products-page">
+                <div class="title-section animate-text">
+                    <h1 class="products-title">Наші <span class="yellow">Продукти</span></h1>
+                    <p class="products-description">Ознайомтеся з широким спектром комплексних та гнучких банківських
+                        продуктів у YourBank, створених для задоволення ваших унікальних фінансових потреб та прагнень
+                    </p>
+                </div>
+                <div class="product-buttons-wrapper">
+                    <div class="product-buttons">
+                        <div class="products-card">
+                            <span class="text-btn-individual">Для приватних осіб</span>
+                        </div>
+                        <div class="products-card">
+                            <span class="text-btn-business">Для бізнесу</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="services-list">
+                <div class="service-card">
+                    <div class="service-logo">
+                        <img src="assets/images/icons/checking-accounts-icon.png" alt="" class="service-icon">
+                    </div>
+                    <p class="service-title">Розрахункові рахунки</p>
+                    <span class="service-description">Насолоджуйтеся простим та зручним доступом до своїх коштів завдяки
+                        нашому вибору розрахункових рахунків. Скористайтеся перевагами онлайн- та мобільного банкінгу,
+                        дебетовими картками та безкоштовним зняттям готівки в банкоматах.</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-logo">
+                        <img src="assets/images/icons/savings-accounts-icon.png" alt="" class="service-icon">
+                    </div>
+                    <p class="service-title">Ощадні рахунки</p>
+                    <span class="service-description">Накопичуйте кошти завдяки нашим конкурентним відсотковим ставкам
+                        та гнучким ощадним рахункам. Незалежно від того, чи заощаджуєте ви на конкретну мету, чи
+                        прагнете примножити статки з часом, у нас є відповідний рахунок для вас.</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-logo">
+                        <img src="assets/images/icons/loans-and-mortgages-icon.png" alt="" class="service-icon">
+                    </div>
+                    <p class="service-title">Кредити та іпотека</p>
+                    <span class="service-description">Втілюйте свої мрії в реальність завдяки нашим гнучким умовам
+                        кредитування та іпотеки. Від персональних кредитів до іпотеки на житло — наші досвідчені фахівці
+                        допоможуть вам пройти процес подачі заявки та отримати необхідні кошти.</span>
+                </div>
+            </div>
+        </section>
+        <section class="cases-section">
+            <h1 class="case-title animate-text"><span class="yellow">Сценарії використання</span></h1>
+            <p class="case-description animate-text">У YourBank ми задовольняємо різноманітні потреби як приватних осіб,
+                так і бізнесу, пропонуючи широкий спектр фінансових рішень</p>
+            <div class="cases-inner-part">
+                <div class="use-case-list animate-box slide-left">
+                    <div class="case-list">
+                        <div class="case-card card-one">
+                            <div class="case-logo">
+                                <img src="assets/images/icons/managing-case-icon.png" alt="" class="case-icon">
+                            </div>
+                            <p class="case-card-title">Управління особистими фінансами</p>
+                        </div>
+                        <div class="case-card">
+                            <div class="case-logo">
+                                <img src="assets/images/icons/future-case-icon.png" alt="" class="case-icon">
+                            </div>
+                            <p class="case-card-title">Заощадження на майбутнє</p>
+                        </div>
+                    </div>
+                    <div class="case-list">
+                        <div class="case-card">
+                            <div class="case-logo">
+                                <img src="assets/images/icons/homeownership-case-icon.png" alt="" class="case-icon">
+                            </div>
+                            <p class="case-card-title">Придбання власного житла</p>
+                        </div>
+                        <div class="case-card">
+                            <div class="case-logo">
+                                <img src="assets/images/icons/education-case-icon.png" alt="" class="case-icon">
+                            </div>
+                            <p class="case-card-title">Фінансування освіти</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-individual-wrap">
+                    <div class="case-individual-inner">
+                        <p class="individual-title animate-text">Для приватних осіб</p>
+                        <p class="individual-description animate-text">Для приватних осіб наші іпотечні послуги
+                            відкривають шлях до власного житла, а гнучкі персональні кредити надають важливу підтримку
+                            на різних життєвих етапах. Ми також приділяємо увагу плануванню виходу на пенсію,
+                            забезпечуючи фінансово захищене майбутнє наших клієнтів</p>
+                    </div>
+                    <div class="individual-stats">
+                        <div class="individual-card">
+                            <p class="yellow percentage-stats">78%</p>
+                            <span class="stats-description">Надійне пенсійне планування</span>
+                        </div>
+                        <div class="individual-card">
+                            <p class="yellow percentage-stats marg30">63%</p>
+                            <span class="stats-description">Зручна консолідація боргів</span>
+                        </div>
+                        <div class="individual-card">
+                            <p class="yellow percentage-stats marg30">91%</p>
+                            <span class="stats-description">Зменшення фінансового навантаження</span>
+                        </div>
+                    </div>
+                    <button class="btn-learn-more">Дізнатися більше</button>
+                </div>
+            </div>
+            <div class="cases-inner-part-extend">
+                <div class="use-case-list-extend animate-box slide-right">
+                    <div class="case-list-extend">
+                        <div class="case-card card-one">
+                            <div class="case-logo">
+                                <img src="assets/images/icons/startups-case-icon.png" alt="" class="case-icon">
+                            </div>
+                            <p class="case-card-title">Стартапи та підприємці</p>
+                        </div>
+                        <div class="case-card">
+                            <div class="case-logo">
+                                <img src="assets/images/icons/management-case-icon.png" alt="" class="case-icon">
+                            </div>
+                            <p class="case-card-title">Управління грошовими потоками</p>
+                        </div>
+                    </div>
+                    <div class="case-list">
+                        <div class="case-card">
+                            <div class="case-logo">
+                                <img src="assets/images/icons/business-case-icon.png" alt="" class="case-icon">
+                            </div>
+                            <p class="case-card-title">Розширення бізнесу</p>
+                        </div>
+                        <div class="case-card">
+                            <div class="case-logo">
+                                <img src="assets/images/icons/payment-case-icon.png" alt="" class="case-icon">
+                            </div>
+                            <p class="case-card-title">Платіжні рішення</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-individual-wrap">
+                    <div class="case-individual-inner">
+                        <p class="individual-title animate-text">Для бізнесу</p>
+                        <p class="individual-description animate-text">Для бізнесу ми сприяємо зростанню завдяки
+                            рішенням для оборотного капіталу, які оптимізують грошові потоки, а наші індивідуальні
+                            фінансові рішення стимулюють розширення компанії. Якими б не були ваші фінансові прагнення,
+                            YourBank прагне надати відповідні інструменти та підтримку для їх досягнення</p>
+                    </div>
+                    <div class="individual-stats">
+                        <div class="individual-card">
+                            <p class="yellow percentage-stats">65%</p>
+                            <span class="stats-description">Управління грошовими потоками</span>
+                        </div>
+                        <div class="individual-card">
+                            <p class="yellow percentage-stats marg30">70%</p>
+                            <span class="stats-description">Стимулювання розширення бізнесу</span>
+                        </div>
+                        <div class="individual-card">
+                            <p class="yellow percentage-stats marg30">45%</p>
+                            <span class="stats-description">Оптимізація виплати зарплат</span>
+                        </div>
+                    </div>
+                    <button class="btn-learn-more btn-bus">Дізнатися більше</button>
+                </div>
+            </div>
+        </section>
+        <section class="features-section">
+            <h1 class="feature-title animate-text">Наші <span class="yellow">Можливості</span></h1>
+            <p class="feature-description animate-text">Відкрийте для себе безліч потужних можливостей YourBank,
+                включаючи безперебійний онлайн-банкінг, безпечні транзакції та персоналізовані фінансові аналітичні
+                дані, створені для покращення вашого досвіду користування банком</p>
+            <div class="features-container animate-box slide-left">
+                <div class="features-buttons">
+                    <button class="btn-feature yellow">
+                        Онлайн-банкінг
+                    </button>
+                    <button class="btn-feature">
+                        Фінансові інструменти
+                    </button>
+                    <button class="btn-feature">
+                        Клієнтська підтримка
+                    </button>
+                </div>
+                <div class="feature-list">
+                    <div class="feature-inner-wrap">
+                        <div class="feature-card">
+                            <div class="card-header">
+                                <p class="feature-card-title">Цілодобовий доступ до рахунку 24/7</p>
+                                <img src="assets/images/icons/arrow-feature-icon.png" alt="" class="feature-icon">
+                            </div>
+                            <span class="feature-card-description">Насолоджуйтеся зручністю доступу до своїх рахунків у
+                                будь-який час і з будь-якого місця через нашу захищену платформу онлайн-банкінгу.
+                                Перевіряйте баланс, переказуйте кошти та легко сплачуйте рахунки.</span>
+                        </div>
+                        <div class="feature-card">
+                            <div class="card-header">
+                                <p class="feature-card-title">Мобільний додаток банкінгу</p>
+                                <img src="assets/images/icons/arrow-feature-icon.png" alt="" class="feature-icon">
+                            </div>
+                            <span class="feature-card-description">Залишайтеся на зв'язку зі своїми фінансами на ходу
+                                завдяки нашому зручному мобільному додатку. Легко керуйте своїми рахунками, поповнюйте
+                                баланс та здійснюйте платежі зі смартфона чи планшета.</span>
+                        </div>
+                    </div>
+                    <div class="feature-inner-wrap">
+                        <div class="feature-card">
+                            <div class="card-header">
+                                <p class="feature-card-title">Захищені транзакції</p>
+                                <img src="assets/images/icons/arrow-feature-icon.png" alt="" class="feature-icon">
+                            </div>
+                            <span class="feature-card-description">Будьте впевнені, що ваші транзакції захищені
+                                передовими заходами безпеки. Ми використовуємо шифрування та багатофакторну
+                                автентифікацію для захисту вашої фінансової інформації.</span>
+                        </div>
+                        <div class="feature-card">
+                            <div class="card-header">
+                                <p class="feature-card-title">Оплата рахунків та перекази</p>
+                                <img src="assets/images/icons/arrow-feature-icon.png" alt="" class="feature-icon">
+                            </div>
+                            <span class="feature-card-description">Защаджуйте час та уникайте штрафів за прострочення
+                                завдяки нашій зручній послузі оплати рахунків. Налаштовуйте регулярні платежі або
+                                здійснюйте разові перекази між своїми рахунками лише в кілька кліків.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="faq-section">
+            <div class="faq-title-container animate-text">
+                <p class="faq-title"><span class="yellow">Часті</span> запитання</p>
+                <p class="faq-description">У вас все ще залишилися запитання? Зв'яжіться з нашою командою через
+                    support@yourbank.com</p>
+            </div>
+            <div class="faq-list animate-box slide-right">
+                <div class="faq-inner-wrap">
+                    <div class="faq-card">
+                        <div class="faq-card-header">
+                            <p class="faq-card-title">Як відкрити рахунок у YourBank?</p>
+                        </div>
+                        <span class="faq-card-description">Відкрити рахунок у YourBank дуже просто. Перейдіть на наш
+                            вебсайт та натисніть кнопку «Відкрити рахунок». Дотримуйтесь інструкцій, надайте необхідну
+                            інформацію та завершіть процес подачі заявки. Якщо у вас виникнуть запитання або знадобиться
+                            допомога, наша служба підтримки завжди готова допомогти.</span>
+                    </div>
+                    <div class="faq-card">
+                        <div class="faq-card-header">
+                            <p class="faq-header-title">Які документи потрібно надати для подачі заявки на кредит?</p>
+                        </div>
+                        <span class="faq-card-description">Документи, необхідні для подачі заявки на кредит, можуть
+                            відрізнятися залежно від типу кредиту. Зазвичай вам потрібно надати документи, що
+                            посвідчують особу (наприклад, паспорт або водійське посвідчення), підтвердження доходу
+                            (довідку про доходи або податкову декларацію) та інформацію про заставу (за наявності). Наші
+                            кредитні фахівці ознайомлять вас із конкретними вимогами під час подачі заявки.</span>
+                    </div>
+                </div>
+                <div class="faq-inner-wrap">
+                    <div class="faq-card">
+                        <div class="faq-card-header">
+                            <p class="faq-header-title">Як я можу отримати доступ до своїх рахунків онлайн?</p>
+                        </div>
+                        <span class="faq-card-description">Отримати доступ до своїх рахунків онлайн — просто та
+                            безпечно. Відвідайте наш вебсайт і натисніть кнопку «Вхід». Введіть свій логін та пароль для
+                            доступу до рахунків. Якщо ви ще не зареєстровані в онлайн-банкінгу, натисніть кнопку
+                            «Зареєструватися зараз» та пройдіть реєстрацію. Якщо вам потрібна допомога, наша служба
+                            підтримки допоможе вам.</span>
+                    </div>
+                    <div class="faq-card">
+                        <div class="faq-card-header">
+                            <p class="faq-header-title">Чи захищені мої транзакції та особиста інформація?</p>
+                        </div>
+                        <span class="faq-card-description">У YourBank ми надаємо пріоритет безпеці ваших транзакцій та
+                            особистих даних. Ми використовуємо сучасне шифрування та багатофакторну автентифікацію, щоб
+                            забезпечити надійний захист вашої інформації. Крім того, ми регулярно оновлюємо наші заходи
+                            безпеки, щоб протидіяти новим загрозам. Ви можете здійснювати банківські операції з
+                            упевненістю, знаючи, що ми маємо надійні системи захисту.</span>
+                    </div>
+                </div>
+            </div>
+            <button class="faq-load">Завантажити всі FAQ <img src="assets/images/icons/load-faq-icon.png"
+                    alt=""></button>
+        </section>
+        <section class="testimonials-section">
+            <div class="testimonials-page">
+                <div class="testimonials-title-section animate-text">
+                    <h1 class="testimonials-title">Наші <span class="yellow">Відгуки</span></h1>
+                    <p class="testimonials-description">Дізнайтеся, як YourBank змінив життя за допомогою інноваційних
+                        цифрових рішень та персоналізованого обслуговування. Подивіться, чому наші клієнти довіряють нам
+                        для безпечної та успішної фінансової подорожі</p>
+                </div>
+                <div class="testimonials-buttons-wrapper">
+                    <div class="testimonials-buttons">
+                        <div class="testimonials-card">
+                            <span class="text-btn-individual">Для приватних осіб</span>
+                        </div>
+                        <div class="testimonials-card">
+                            <span class="text-btn-business">Для бізнесу</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-container animate-box slide-left">
+                <div class="reviews-card opacity4">
+                    <div class="review-header">
+                        <img src="assets/images/icons/review-icon.png" alt="" class="review-logo">
+                    </div>
+                    <span class="review-text">YourBank залишається моїм надійним фінансовим партнером уже протягом
+                        багатьох років. Його персоналізований сервіс та інноваційні рішення цифрового банкінгу зробили
+                        управління моїми фінансами надзвичайно простим.</span>
+                    <p class="review-author">Сара Т.</p>
+                </div>
+                <div class="reviews-card">
+                    <div class="review-header">
+                        <img src="assets/images/icons/review-icon.png" alt="" class="review-logo">
+                    </div>
+                    <span class="review-text">Нещодавно я відкрив власний бізнес, і YourBank відіграв ключову роль у
+                        відкритті моїх бізнес-рахунків та отриманні необхідного фінансування. Їхні експертні поради та
+                        індивідуальні рішення були просто незамінними.</span>
+                    <p class="review-author">Джон Д.</p>
+                </div>
+                <div class="reviews-card opacity5">
+                    <div class="review-header">
+                        <img src="assets/images/icons/review-icon.png" alt="" class="review-logo">
+                    </div>
+                    <span class="review-text">Мені дуже подобається зручність мобільного додатка YourBank. Він дозволяє
+                        контролювати фінанси та здійснювати транзакції на ходу. Додаток зручний і безпечний, що дарує
+                        мені цілковитий спокій.</span>
+                    <p class="review-author">Емілі Г.</p>
+                </div>
+            </div>
+            <div class="review-swipes">
+                <div class="swipe-card swipe-left">
+                    <img src="assets/images/icons/swipe-left-icon.png" alt="" class="swipe-left">
+                </div>
+                <div class="swipe-card swipe-right">
+                    <img src="assets/images/icons/swipe-right-icon.png" alt="" class="swipe-right">
+                </div>
+            </div>
+        </section>
+        <div class="cta-card">
+            <div class="cta-page">
+                <div class="cta-title-section">
+                    <h2 class="cta-title animate-text">Розпочніть свою фінансову подорож з <span class="yellow">YourBank
+                            вже сьогодні!</span>
+                    </h2>
+                    <p class="cta-description">
+                        Приєднуйтесь до YourBank та отримайте доступ до сучасних цифрових послуг, вигідних умов
+                        кредитування та надійного захисту ваших заощаджень.
+                    </p>
+                </div>
+                <button class="btn cta-btn">Відкрити рахунок</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-container">
+                <img src="assets/images/icons/logo.png" alt="" class="footer-logo-icon">
+                <span class="footer-title">YourBanK</span>
+            </div>
+            <div class="footer-list">
+                <ul>
+                    <li><a href="#">Головна</a></li>
+                    <li><a href="#">Кар'єра</a></li>
+                    <li><a href="#">Про нас</a></li>
+                    <li><a href="#">Безпека</a></li>
+                </ul>
+            </div>
+            <div class="contact-container">
+                <div class="contact-item">
+                    <a href="#">
+                        <img src="assets/images/icons/email-footer-icon.png" alt="">
+                        <span class="contact-data">hello@skillbirdge.com</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="#">
+                        <img src="assets/images/icons/tel-footer-icon.png" alt="">
+                        <span class="contact-data">+91 91813 23 2309</span>
+                    </a>
+                </div>
+                <div class="contact-item item-bottom">
+                    <a href="#">
+                        <img src="assets/images/icons/geo-footer-icon.png" alt="">
+                        <span class="contact-data">Десь у світі</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="social-networks-container">
+            <div class="social-networks">
+                <div class="social-card card-facebook">
+                    <a href="#">
+                        <img src="assets/images/icons/facebook-footer-icon.png" alt="">
+                    </a>
+                </div>
+                <div class="social-card card-twitter">
+                    <a href="#">
+                        <img src="assets/images/icons/twitter-footer-icon.png" alt="">
+                    </a>
+                </div>
+                <div class="social-card card-instagram">
+                    <a href="#">
+                        <img src="assets/images/icons/instagram-footer-icon.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <a href="#" class="rights-reserved">YourBank Усі права захищені</a>
+            <a href="#" class="privacy-policy">Політика конфіденційності | Умови використання</a>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modalWindowSignUp">
+        <div class="modal-section">
+            <div class="signup-form">
+                <div class="signup-header">
+                    <p class="signup-title yellow">Реєстрація</p>
+                    <p class="signup-description">Приєднуйтесь до нашої спільноти вже сьогодні! Створіть обліковий
+                        запис, щоб відкрити ексклюзивні можливості та персоналізований досвід.</p>
+                </div>
+                <div class="forms-input">
+                    <div class="forms-card">
+                        <input type="text" placeholder="Введіть ім'я">
+                        <input type="text" placeholder="Введіть прізвище">
+                    </div>
+                    <div class="forms-card">
+                        <input type="email" placeholder="Введіть свій Email">
+                        <input type="password" placeholder="Введіть свій пароль">
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button class="form-btn-signup">Реєстрація</button>
+                    <button class="form-btn-login" id="openModalLoginFromSignUp">Вхід</button>
+                </div>
+                <p class="continue-signup">Або продовжити через</p>
+                <div class="modal-social">
+                    <div class="social-card-form">
+                        <a href="#">
+                            <img src="assets/images/icons/google-icon.png" alt="">
+                        </a>
+                    </div>
+                    <div class="social-card-form">
+                        <a href="#">
+                            <img src="assets/images/icons/facebook-icon.png" alt="">
+                        </a>
+                    </div>
+                    <div class="social-card-form">
+                        <a href="#">
+                            <img src="assets/images/icons/apple-icon.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="close-btn-form" id="closeBtnSignUp"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalWindowLogin">
+        <div class="modal-section-login">
+            <div class="signup-form">
+                <div class="signup-header">
+                    <p class="signup-title yellow">Вхід</p>
+                    <p class="signup-description">З поверненням! Будь ласка, увійдіть, щоб отримати доступ до свого
+                        облікового запису.</p>
+                </div>
+                <div class="forms-input">
+                    <input type="email" placeholder="Введіть свій Email">
+                    <input type="password" placeholder="Введіть свій пароль">
+                </div>
+                <div class="form-forgot-password">
+                    <a href="">Забули пароль?</a>
+                </div>
+                <div class="form-buttons">
+                    <button class="login-form-btn-login">Вхід</button>
+                    <button class="login-form-btn-signup" id="openModalSignUpFromLogin">Реєстрація</button>
+                </div>
+                <p class="continue-signup">Або продовжити через</p>
+                <div class="modal-social">
+                    <div class="social-card-form">
+                        <a href="#">
+                            <img src="assets/images/icons/google-icon.png" alt="">
+                        </a>
+                    </div>
+                    <div class="social-card-form">
+                        <a href="#">
+                            <img src="assets/images/icons/facebook-icon.png" alt="">
+                        </a>
+                    </div>
+                    <div class="social-card-form">
+                        <a href="#">
+                            <img src="assets/images/icons/apple-icon.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="close-btn-form" id="closeBtnLogin"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
