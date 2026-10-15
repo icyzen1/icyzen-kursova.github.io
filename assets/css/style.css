@@ -929,7 +929,7 @@ body {
     padding: 30px;
 }
 
-.faq-card:last-child {
+.faq-inner-wrap:nth-child(2) .faq-card:last-child {
     mask-image: linear-gradient(to top, transparent 0%, black 100%);
 }
 
@@ -1502,7 +1502,733 @@ footer {
     cursor: pointer;
 }
 
+/**/
 
+.main-security-section {
+    width: 100%;
+    max-width: 358px;
+    margin: 0 auto;
+}
+
+.security-title-page {
+    width: 100%;
+    max-width: 358px;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: #1C1C1C;
+    padding: 14px;
+}
+
+.security-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 329px;
+    max-height: 316px;
+    border-radius: 16px;
+    object-position: center;
+    object-fit: cover;
+    filter: grayscale(100%);
+    z-index: 1;
+}
+
+.security-title-wrap {
+    position: relative;
+    padding: 24px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #1A1A1A;
+    z-index: 2;
+    margin-top: -30px;
+}
+
+.security-title {
+    font-weight: 500;
+    font-size: 28px;
+}
+
+.security-desc {
+    font-size: 14px;
+    color: #B3B3B3;
+    font-weight: 300;
+    margin-top: 14px;
+}
+
+.protect-section {
+    max-width: 358px;
+    margin: 80px auto 0;
+}
+
+.protect-title-wrap {
+    text-align: center;
+}
+
+.protect-title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.protect-desc {
+    font-size: 14px;
+    color: #B3B3B3;
+}
+
+.protect-list {
+    margin-top: 40px;
+}
+
+.protect-inner-wrap:nth-child(2) {
+    margin-top: 18px;
+}
+
+.protect-card {
+    border: 1px solid #262626;
+    border-radius: 20px;
+    padding: 24px;
+    background-color: #1C1C1C;
+    position: relative;
+    overflow: hidden;
+}
+
+.protect-card::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 40px;
+    height: 180px;
+
+    background: radial-gradient(circle,
+            rgba(202, 255, 51, 0.15) 0%,
+            rgba(202, 255, 51, 0) 70%);
+
+    filter: blur(55px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.protect-card:nth-child(2) {
+    margin-top: 18px;
+}
+
+.protect-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.protect-img {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(180deg, rgba(202, 255, 51, 0.1) -66.22%,
+            rgba(202, 255, 51, 0) 85.46%);
+    border: 1px solid;
+    border-image-source: linear-gradient(180deg, rgba(202, 255, 51, 0.2) -173.65%,
+            rgba(202, 255, 51, 0) 87.22%);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.protect-card-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    margin-left: 14px;
+}
+
+.protect-card-description {
+    font-size: 14px;
+    font-weight: 300;
+    color: #B3B3B3;
+}
+
+/**/
+
+.main-about-section {
+    width: 100%;
+    max-width: 358px;
+    margin: 0 auto;
+}
+
+.about-title-page {
+    width: 100%;
+    max-width: 358px;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: #1C1C1C;
+    padding: 14px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 329px;
+    max-height: 316px;
+    border-radius: 16px;
+    object-position: center;
+    object-fit: cover;
+    filter: grayscale(100%);
+    z-index: 1;
+}
+
+.about-title-wrap {
+    position: relative;
+    padding: 24px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #1A1A1A;
+    z-index: 2;
+    margin-top: -30px;
+}
+
+.about-welcome {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.about-title {
+    font-weight: 500;
+    font-size: 28px;
+}
+
+.about-desc {
+    font-size: 14px;
+    color: #B3B3B3;
+    font-weight: 300;
+    margin-top: 14px;
+}
+
+.mission-section {
+    margin: 80px auto 0;
+    width: 100%;
+    max-width: 358px;
+}
+
+.mission-title-wrap {
+    text-align: center;
+}
+
+.mission-title {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.mission-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: #B3B3B3;
+    margin-top: 10px;
+}
+
+.mission-wrap {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission-image {
+    position: relative;
+    padding: 20px 20px 0 20px;
+    background-color: #1C1C1C;
+    border: 1px solid #262626;
+    border-radius: 50px 50px 0 0;
+    border-bottom: 1px solid #CAFF33;
+    overflow: hidden;
+}
+
+.mission-image:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 118px;
+    height: 112px;
+    background-image: radial-gradient(103.26% 114.79% at 103.26% 0%, rgba(25, 25, 25, 0.3) 20.29%, rgba(202, 255, 51, 0.3) 34.91%, rgba(25, 25, 25, 0.3) 60.69%);
+    background-size: 5px 5px;
+    mask-image: radial-gradient(circle at top left, black 20%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.mission-image img {
+    min-height: 309px;
+    max-width: 318px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 50px 50px 0 0;
+    filter: grayscale(100%);
+    position: relative;
+    z-index: 2;
+}
+
+.mission-inner {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.mission-inner-title {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.mission-inner-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: #B3B3B3;
+    margin-top: 10px;
+}
+
+.vision-wrap {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.vision-image {
+    position: relative;
+    padding: 20px 20px 0 20px;
+    background-color: #1C1C1C;
+    border: 1px solid #262626;
+    border-radius: 50px 50px 0 0;
+    border-bottom: 1px solid #CAFF33;
+    overflow: hidden;
+}
+
+.vision-image:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 118px;
+    height: 112px;
+    background-image: radial-gradient(103.26% 114.79% at 103.26% 0%, rgba(25, 25, 25, 0.3) 20.29%, rgba(202, 255, 51, 0.3) 34.91%, rgba(25, 25, 25, 0.3) 60.69%);
+    background-size: 5px 5px;
+    mask-image: radial-gradient(circle at top left, black 20%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.vision-image img {
+    min-height: 309px;
+    max-width: 318px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 50px 50px 0 0;
+    filter: grayscale(100%);
+    position: relative;
+    z-index: 2;
+}
+
+.vision-inner {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.vision-inner-title {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.vision-inner-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: #B3B3B3;
+    margin-top: 10px;
+}
+
+.release-section {
+    max-width: 358px;
+    margin: 80px auto 0;
+}
+
+.release-title-wrap {
+    text-align: center;
+}
+
+.release-title {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.release-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #B3B3B3;
+    margin: 10px 0 20px 0;
+}
+
+.release-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.release-card {
+    margin-top: 20px;
+    background-color: #1C1C1C;
+    border: 1px solid #262626;
+    padding: 20px;
+    border-radius: 40px 40px 16px 16px;
+}
+
+.release-card-image {
+    display: flex;
+    justify-content: center;
+}
+
+.release-card-image img {
+    width: 100%;
+    max-width: 318px;
+    min-height: 205px;
+    border-radius: 30px 30px 12px 12px;
+    object-position: center;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.release-card-title {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+.release-time-wrap {
+    padding: 15px 0 24px 0;
+}
+
+.release-location {
+    border-radius: 68px;
+    background-color: #1A1A1A;
+    border: 1px solid #262626;
+    padding: 6px 12px;
+    color: #B3B3B3
+}
+
+.release-data {
+    margin-left: 6px;
+    border-radius: 68px;
+    background-color: #1A1A1A;
+    border: 1px solid #262626;
+    padding: 6px 12px;
+    color: #B3B3B3
+}
+
+.release-card-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: #B3B3B3;
+}
+
+/*CAREERS*/
+
+.main-careers-section {
+    width: 100%;
+    max-width: 358px;
+    margin: 0 auto;
+}
+
+.careers-title-page {
+    width: 100%;
+    max-width: 358px;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: #1C1C1C;
+    padding: 14px;
+}
+
+.careers-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 329px;
+    max-height: 316px;
+    border-radius: 16px;
+    object-position: center;
+    object-fit: cover;
+    filter: grayscale(100%);
+    z-index: 1;
+}
+
+.careers-title-wrap {
+    position: relative;
+    padding: 24px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #1A1A1A;
+    z-index: 2;
+    margin-top: -30px;
+}
+
+.careers-title {
+    font-weight: 500;
+    font-size: 28px;
+}
+
+.careers-desc {
+    font-size: 14px;
+    color: #B3B3B3;
+    font-weight: 300;
+    margin-top: 14px;
+}
+
+.values-section {
+    max-width: 358px;
+    margin: 80px auto 0;
+}
+
+.values-title-wrap {
+    text-align: center;
+}
+
+.values-title {
+    font-size: 28px;
+}
+
+.values-desc {
+    font-size: 14px;
+    color: #B3B3B3;
+}
+
+.values-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.values-item {
+    margin-top: 50px;
+    border-left: 1px solid #CAFF33;
+    padding-left: 20px;
+}
+
+.values-title-item {
+    font-size: 30px;
+    margin-bottom: 14px;
+    color: #4C4C4D;
+}
+
+.values-desc-item {
+    font-size: 14px;
+    color: #B3B3B3;
+}
+
+.benefits-section {
+    max-width: 358px;
+    margin: 80px auto 0;
+}
+
+.benefits-title-wrap {
+    text-align: center;
+}
+
+.benefits-title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.benefits-desc {
+    font-size: 14px;
+    color: #B3B3B3;
+}
+
+.benefits-list {
+    margin-top: 40px;
+}
+
+.benefits-inner-wrap:nth-child(2) {
+    margin-top: 18px;
+}
+
+.benefits-card {
+    border: 1px solid #262626;
+    border-radius: 20px;
+    padding: 24px;
+    background-color: #1C1C1C;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefits-card::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 40px;
+    height: 180px;
+
+    background: radial-gradient(circle,
+            rgba(202, 255, 51, 0.15) 0%,
+            rgba(202, 255, 51, 0) 70%);
+
+    filter: blur(55px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.benefits-card:nth-child(2) {
+    margin-top: 18px;
+}
+
+.benefits-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.benefits-img {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(180deg, rgba(202, 255, 51, 0.1) -66.22%,
+            rgba(202, 255, 51, 0) 85.46%);
+    border: 1px solid;
+    border-image-source: linear-gradient(180deg, rgba(202, 255, 51, 0.2) -173.65%,
+            rgba(202, 255, 51, 0) 87.22%);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefits-card-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    margin-left: 14px;
+}
+
+.benefits-card-description {
+    font-size: 14px;
+    font-weight: 300;
+    color: #B3B3B3;
+}
+
+.vacancy-section {
+    max-width: 358px;
+    margin: 80px auto 0;
+}
+
+.vacancy-title-wrap {
+    text-align: center;
+}
+
+.vacancy-title {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.vacancy-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #B3B3B3;
+    margin: 10px 0 20px 0;
+}
+
+.vacancy-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.vacancy-card {
+    margin-top: 20px;
+    background-color: #1C1C1C;
+    border: 1px solid #262626;
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.vacancy-card-image {
+    display: flex;
+    justify-content: center;
+}
+
+.vacancy-card-image img {
+    width: 100%;
+    max-width: 318px;
+    min-height: 205px;
+    border-radius: 30px 30px 12px 12px;
+    object-position: center;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.vacancy-card-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.vacancy-time-wrap {
+    margin-top: 10px;
+}
+
+.vacancy-location {
+    border-radius: 68px;
+    background-color: #1A1A1A;
+    border: 1px solid #262626;
+    padding: 6px 10px;
+    color: #B3B3B3;
+    width: 120px;
+}
+
+.vacancy-department {
+    border-radius: 68px;
+    background-color: #1A1A1A;
+    border: 1px solid #262626;
+    padding: 6px 10px;
+    color: #B3B3B3;
+}
+
+.w1 {
+    width: 210px;
+}
+
+.w2 {
+    width: 230px;
+    margin-top: 6px;
+}
+
+.w3 {
+    width: 250px;
+}
+
+.vacancy-about-job {
+    margin: 30px 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.vacancy-card-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: #B3B3B3;
+}
+
+.vacancy-requirements-t {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.vacancy-requirements-card {
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.vacancy-requirements {
+    font-size: 14px;
+    color: #B3B3B3;
+    margin-left: 8px;
+}
 
 @media (min-width: 480px) {
     .navbar {
@@ -1521,6 +2247,206 @@ footer {
     .cta-card {
         height: 100%;
         min-height: 223px;
+    }
+}
+
+@media (min-width: 750px) {
+    .navbar {
+        max-width: 700px;
+    }
+
+    .main-section {
+        flex-direction: row;
+    }
+
+    .main-page {
+        flex-direction: row;
+    }
+
+    .one-page {
+        margin-right: 40px;
+    }
+
+    .product-buttons-wrapper {
+        margin-bottom: 30px;
+    }
+
+    .services-list {
+        display: flex;
+    }
+
+    .service-card {
+        border-bottom: none;
+        border-right: 1px solid #262626;
+        padding: 0 40px;
+    }
+
+    .service-card:last-child {
+        border-right: none;
+    }
+
+    .individual-stats {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .individual-card {
+        flex: 1;
+        border-bottom: none;
+        border-right: 1px dashed #262626;
+        text-align: left;
+        padding-bottom: 0;
+        margin: 0 50px 15px 0;
+    }
+
+    .individual-card:nth-child(2) {
+        padding-right: 25px;
+    }
+
+    .individual-card:last-child {
+        margin-right: 0;
+        border-right: none;
+    }
+
+    .marg30 {
+        margin: 0;
+    }
+
+    .features-buttons {
+        width: 550px;
+    }
+
+    .mission-section,
+    .vision-section {
+        max-width: 800px;
+    }
+
+    .mission-wrap {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .mission-image {
+        border-bottom: none;
+    }
+
+    .mission-inner {
+        max-width: 350px;
+        text-align: left;
+        padding-left: 40px;
+        padding-top: 0;
+        border-left: 1px solid #CAFF33;
+    }
+
+    .vision-wrap {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .vision-image {
+        border-bottom: none;
+    }
+
+    .vision-inner {
+        max-width: 350px;
+        text-align: left;
+        padding-right: 40px;
+        padding-top: 0;
+        border-right: 1px solid #CAFF33;
+    }
+
+    .release-section {
+        max-width: 800px;
+    }
+
+    .release-list {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .release-card {
+        width: 100%;
+        max-width: 750px;
+        height: 620px;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .protect-section {
+        max-width: 800px;
+    }
+
+    .protect-inner-wrap {
+        display: flex;
+        justify-content: center;
+    }
+
+    .protect-card {
+        max-width: 380px;
+        margin-left: 20px;
+    }
+
+    .protect-card:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .values-section {
+        max-width: 800px;
+    }
+
+    .values-inner-item {
+        display: flex;
+    }
+
+    .values-item:last-child {
+        margin-left: 20px;
+    }
+
+    .values-item {
+        width: 100%;
+        max-width: 390px;
+    }
+
+    .benefits-section {
+        max-width: 800px;
+    }
+
+    .benefits-inner-wrap {
+        display: flex;
+    }
+
+    .benefits-card {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .benefits-card:nth-child(2) {
+        margin: 0 0 0 20px;
+    }
+
+    .vacancy-section {
+        max-width: 800px;
+    }
+
+    .vacancy-list {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .vacancy-list:nth-child(2) {
+        margin-top: 20px;
+        justify-content: start;
+        max-width: 370px;
+    }
+
+    .vacancy-card {
+        width: 100%;
+        max-width: 390px;
+        min-height: 650px;
+        margin-top: 0;
     }
 }
 
@@ -1543,7 +2469,7 @@ footer {
 
     .navbar {
         width: 100%;
-        max-width: 1280px;
+        max-width: 1280px !important;
     }
 
     .burger-menu {
@@ -1642,7 +2568,7 @@ footer {
         width: 100%;
         max-width: 410px;
         height: 501px;
-        margin: 0;
+        margin: 0 0 0 15px;
     }
 
     .main-transactions {
@@ -1964,9 +2890,6 @@ footer {
 
     .individual-card:last-child {
         margin-right: 0;
-    }
-
-    .individual-card:nth-child(3) {
         border-right: none;
     }
 
@@ -2118,6 +3041,10 @@ footer {
         max-width: 630px;
         min-height: 295px;
         padding: 40px;
+    }
+
+    .faq-card:last-child {
+        mask-image: linear-gradient(to top, transparent 0%, black 100%);
     }
 
     .faq-card-header {
@@ -2287,8 +3214,6 @@ footer {
         align-items: center;
     }
 
-
-
     .contact-data {
         font-size: 1rem;
         margin-left: 5px;
@@ -2314,6 +3239,493 @@ footer {
         margin: 0;
     }
 
+    /*SECURITY*/
+
+    .main-security-section {
+        width: 100%;
+        max-width: 1280px;
+        position: relative;
+    }
+
+    .security-title-page {
+        width: 100%;
+        max-width: 1279px;
+        padding: 40px;
+        margin-top: 50px;
+    }
+
+    .security-image {
+        width: 100%;
+        max-width: 715px;
+        height: auto;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .security-image img {
+        width: 100%;
+        height: 568px;
+        max-width: none;
+        max-height: none;
+        display: block;
+    }
+
+    .security-title-wrap {
+        width: 100%;
+        max-width: 658px;
+        height: 384px;
+        padding: 40px;
+        border-radius: 20px 0 60px 20px;
+        text-align: left;
+        margin-top: 0;
+        position: absolute;
+        top: 85px;
+    }
+
+    .protect-section {
+        width: 100%;
+        max-width: 1280px;
+    }
+
+    .protect-title-wrap {
+        text-align: left;
+    }
+
+    .protect-title {
+        font-size: 38px;
+    }
+
+    .protect-desc {
+        font-size: 16px;
+    }
+
+    .protect-list {
+        max-width: 1269px;
+        background-color: #1C1C1C;
+        border-radius: 50px;
+        padding: 40px;
+    }
+
+    .protect-inner-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .protect-card {
+        width: 100%;
+        max-width: 550px;
+        height: 250px;
+        padding: 40px;
+    }
+
+    .protect-card:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .security-title {
+        height: 124px;
+        font-size: 46px;
+        font-weight: 500;
+    }
+
+    .security-desc {
+        height: 100px;
+        font-size: 18px;
+    }
+
+    /*ABOUT*/
+
+    .main-about-section {
+        width: 100%;
+        max-width: 1280px;
+        position: relative;
+    }
+
+    .about-title-page {
+        width: 100%;
+        max-width: 1279px;
+        padding: 40px;
+        margin-top: 50px;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 715px;
+        height: auto;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        display: block;
+    }
+
+    .about-title-wrap {
+        width: 100%;
+        max-width: 658px;
+        height: 507px;
+        padding: 60px;
+        border-radius: 20px 0 60px 20px;
+        text-align: left;
+        margin-top: 0;
+        position: absolute;
+        top: 85px;
+    }
+
+    .about-welcome {
+        font-size: 18px;
+    }
+
+    .about-title {
+        font-size: 48px;
+    }
+
+    .about-desc {
+        font-size: 18px;
+    }
+
+    .mission-section {
+        margin-top: 120px;
+        max-width: 1280px;
+    }
+
+    .mission-title-wrap {
+        text-align: left;
+    }
+
+    .mission-title {
+        font-size: 38px;
+    }
+
+    .mission-desc {
+        font-size: 16px;
+    }
+
+    .mission-wrap {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .mission-image {
+        width: 545px;
+        min-width: 545px;
+        height: 500px;
+        flex-shrink: 0;
+        position: relative;
+        padding: 60px 60px 0 60px;
+        background-color: #1C1C1C;
+        border: 1px solid #262626;
+        border-radius: 50px 50px 0 0;
+        overflow: hidden;
+    }
+
+    .mission-image img {
+        width: 100%;
+        max-width: 425px;
+        height: 100%;
+        max-height: 440px;
+    }
+
+    .mission-inner {
+        max-width: 735px;
+        text-align: left;
+        padding-left: 40px;
+        padding-top: 0;
+        border-left: 1px solid #CAFF33;
+    }
+
+    .mission-inner-title {
+        font-size: 32px;
+    }
+
+    .mission-inner-desc {
+        font-size: 16px;
+    }
+
+    .vision-wrap {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .vision-image {
+        width: 545px;
+        min-width: 545px;
+        height: 500px;
+        flex-shrink: 0;
+        position: relative;
+        padding: 60px 60px 0 60px;
+        background-color: #1C1C1C;
+        border: 1px solid #262626;
+        border-radius: 50px 50px 0 0;
+        overflow: hidden;
+    }
+
+    .vision-image img {
+        width: 100%;
+        max-width: 425px;
+        height: 100%;
+        max-height: 440px;
+    }
+
+    .vision-inner {
+        max-width: 735px;
+        text-align: left;
+        padding-right: 40px;
+        padding-top: 0;
+        border-right: 1px solid #CAFF33;
+    }
+
+    .vision-inner-title {
+        font-size: 32px;
+    }
+
+    .vision-inner-desc {
+        font-size: 16px;
+    }
+
+    .release-section {
+        max-width: 1280px;
+        margin-top: 120px;
+    }
+
+    .release-title-wrap {
+        text-align: left;
+    }
+
+    .release-title {
+        font-size: 38px;
+    }
+
+    .release-desc {
+        font-size: 16px;
+    }
+
+    .release-list {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .release-card {
+        width: 100%;
+        max-width: 630px;
+        height: 700px;
+        gap: 20px;
+        padding: 24px;
+    }
+
+    .release-card-image img {
+        width: 100%;
+        max-width: 582px;
+        min-height: 277px;
+    }
+
+    .release-card-title {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+
+    .release-card-desc {
+        font-size: 16px;
+    }
+
+    /*CAREERS*/
+
+    .main-careers-section {
+        width: 100%;
+        max-width: 1280px;
+        position: relative;
+    }
+
+    .careers-title-page {
+        width: 100%;
+        max-width: 1279px;
+        padding: 40px;
+        margin-top: 50px;
+    }
+
+    .careers-image {
+        width: 100%;
+        max-width: 715px;
+        height: auto;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .careers-image img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        display: block;
+    }
+
+    .careers-title-wrap {
+        width: 100%;
+        max-width: 658px;
+        height: 408px;
+        padding: 60px;
+        border-radius: 20px 0 60px 20px;
+        text-align: left;
+        margin-top: 0;
+        position: absolute;
+        top: 85px;
+    }
+
+    .careers-title {
+        font-size: 48px;
+    }
+
+    .careers-desc {
+        font-size: 18px;
+    }
+
+    .values-section {
+        max-width: 1280px;
+    }
+
+    .values-title-wrap {
+        max-width: 1280px;
+        text-align: left;
+    }
+
+    .values-title {
+        font-size: 38px;
+    }
+
+    .values-desc {
+        font-size: 16px;
+    }
+
+    .values-list {
+        margin: 0 auto;
+    }
+
+    .values-inner-item {
+        display: flex;
+        justify-content: center;
+    }
+
+    .values-item:last-child {
+        margin-left: 60px;
+    }
+
+    .values-item {
+        width: 100%;
+        max-width: 610px;
+    }
+
+    .values-title-item {
+        font-size: 40px;
+    }
+
+    .values-desc-item {
+        font-size: 16px;
+    }
+
+    .benefits-section {
+        max-width: 1280px;
+    }
+
+    .benefits-title-wrap {
+        text-align: left;
+    }
+
+    .benefits-inner-wrap {
+        display: flex;
+        justify-content: center;
+    }
+
+    .benefits-title {
+        font-size: 38px;
+    }
+
+    .benefits-desc {
+        font-size: 16px;
+    }
+
+    .benefits-card {
+        width: 100%;
+        max-width: 610px;
+    }
+
+    .benefits-card:nth-child(2) {
+        margin: 0 0 0 60px;
+    }
+
+    .benefits-card-title {
+        font-size: 20px;
+    }
+
+    .benefits-card-description {
+        font-size: 16px;
+    }
+
+    .vacancy-section {
+        max-width: 1280px;
+    }
+
+    .vacancy-title-wrap {
+        text-align: left;
+    }
+
+    .vacancy-title {
+        font-size: 38px;
+    }
+
+    .vacancy-desc {
+        font-size: 16px;
+    }
+
+    .vacancy-list {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .vacancy-list:nth-child(2) {
+        margin-top: 20px;
+        justify-content: start;
+        max-width: 630px;
+    }
+
+    .vacancy-card {
+        width: 100%;
+        max-width: 630px;
+        margin-top: 0;
+        padding: 40px;
+    }
+
+    .vacancy-card-title {
+        font-size: 24px;
+    }
+
+    .vacancy-about-job {
+        margin: 40px 0 16px 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .vacancy-card-desc {
+        font-size: 16px;
+    }
+
+    .vacancy-requirements-t {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+
+    .vacancy-requirements {
+        font-size: 16px;
+    }
+
+    /*MODALKI*/
     .modal-section,
     .modal-section-login {
         max-width: 1064px;
@@ -2369,5 +3781,628 @@ footer {
     .modal-social {
         width: 100%;
         max-width: 664px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container-wrap {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 80px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .navbar {
+        width: 100%;
+        max-width: 1600px !important;
+    }
+
+    .main-section {
+        margin: 0 auto;
+        max-width: 1600px;
+    }
+
+    .one-page {
+        width: 950px;
+        margin-right: 70px;
+    }
+
+    .cases-inner-part {
+        width: 100%;
+        max-width: 1600px;
+        margin: 60px auto 0;
+        justify-content: space-between;
+    }
+
+    .cases-inner-part-extend {
+        width: 100%;
+        max-width: 1600px;
+        margin: 60px auto 0;
+    }
+
+    .use-case-list,
+    .case-individual-wrap,
+    .use-case-list-extend {
+        max-width: 748px;
+    }
+
+    .features-container {
+        max-width: 1600px;
+    }
+
+    .features-buttons {
+        max-width: 308px;
+    }
+
+    .feature-list {
+        width: 100%;
+        max-width: 1258px;
+    }
+
+    .feature-card {
+        max-width: 614px;
+    }
+
+    .cta-card {
+        max-width: 1600px;
+    }
+
+    .cta-title-section {
+        max-width: 1103px;
+    }
+
+    .cta-btn {
+        width: 183px;
+        margin: 27px 0 27px 120px
+    }
+
+    .main-security-section {
+        width: 100%;
+        max-width: 1600px;
+        position: relative;
+    }
+
+    .security-title-page {
+        width: 100%;
+        max-width: 1600px;
+        padding: 40px;
+        margin-top: 50px;
+    }
+
+    .security-image {
+        width: 100%;
+        max-width: 968px;
+        height: auto;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .security-image img {
+        width: 100%;
+        height: 568px;
+        max-width: none;
+        max-height: none;
+        display: block;
+    }
+
+    .security-title-wrap {
+        width: 100%;
+        max-width: 791px;
+        height: 384px;
+        padding: 40px;
+        border-radius: 20px 0 60px 20px;
+        text-align: left;
+        margin-top: 0;
+        position: absolute;
+        top: 85px;
+    }
+
+    .protect-section {
+        width: 100%;
+        max-width: 1600px;
+    }
+
+    .protect-title-wrap {
+        text-align: left;
+    }
+
+    .protect-title {
+        font-size: 38px;
+    }
+
+    .protect-desc {
+        font-size: 16px;
+    }
+
+    .protect-list {
+        max-width: 1600px;
+        background-color: #1C1C1C;
+        border-radius: 50px;
+        padding: 40px;
+    }
+
+    .protect-inner-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .protect-card-title {
+        font-size: 22px;
+    }
+
+    .protect-card-description {
+        font-size: 18px;
+    }
+
+    .protect-card {
+        width: 100%;
+        max-width: 688px;
+        height: 240px;
+        padding: 40px;
+    }
+
+    .protect-card:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .security-title {
+        height: 124px;
+        font-size: 46px;
+        font-weight: 500;
+    }
+
+    .security-desc {
+        height: 100px;
+        font-size: 18px;
+    }
+
+    .faq-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1600px;
+    }
+
+    .faq-title {
+        margin-top: 80px;
+        font-size: 48px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .faq-description {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 300;
+        color: #B3B3B3;
+        text-align: center;
+    }
+
+    .faq-list {
+        margin-top: 30px;
+    }
+
+    .faq-card {
+        width: 100%;
+        max-width: 782px;
+        margin-top: 20px;
+        border: 1px solid #262626;
+        border-radius: 10px;
+        padding: 30px;
+    }
+
+    .faq-inner-wrap:nth-child(2) .faq-card:last-child {
+        mask-image: linear-gradient(to top, transparent 0%, black 100%);
+    }
+
+    .faq-card-header {
+        border-bottom: 1px solid #262626;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .faq-card-title {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .faq-card-description {
+        font-size: 18px;
+        font-weight: 300;
+        color: #B3B3B3;
+    }
+
+    .main-about-section {
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .about-title-page {
+        width: 100%;
+        max-width: 1600px;
+        padding: 40px;
+        margin-top: 50px;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 968px;
+        height: auto;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        display: block;
+    }
+
+    .about-title-wrap {
+        width: 100%;
+        max-width: 791px;
+        height: 507px;
+        padding: 60px;
+        border-radius: 20px 0 60px 20px;
+        text-align: left;
+        margin-top: 0;
+        position: absolute;
+        top: 85px;
+    }
+
+    .about-welcome {
+        font-size: 18px;
+    }
+
+    .about-title {
+        font-size: 48px;
+    }
+
+    .about-desc {
+        font-size: 18px;
+    }
+
+    .mission-section {
+        margin-top: 120px;
+        max-width: 1600px;
+    }
+
+    .mission-title-wrap {
+        text-align: left;
+    }
+
+    .mission-title {
+        font-size: 48px;
+    }
+
+    .mission-desc {
+        font-size: 18px;
+    }
+
+    .mission-wrap {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .mission-image {
+        width: 664px;
+        min-width: 664px;
+        height: 621px;
+        flex-shrink: 0;
+        position: relative;
+        padding: 60px 60px 0 60px;
+        background-color: #1C1C1C;
+        border: 1px solid #262626;
+        border-radius: 50px 50px 0 0;
+        overflow: hidden;
+    }
+
+    .mission-image img {
+        width: 100%;
+        max-width: 544px;
+        height: 100%;
+        max-height: 561px;
+    }
+
+    .mission-inner {
+        max-width: 932px;
+        text-align: left;
+        padding-left: 40px;
+        padding-top: 0;
+        border-left: 1px solid #CAFF33;
+    }
+
+    .mission-inner-title {
+        font-size: 32px;
+    }
+
+    .mission-inner-desc {
+        font-size: 16px;
+    }
+
+    .vision-wrap {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .vision-image {
+        width: 664px;
+        min-width: 664px;
+        height: 621px;
+        flex-shrink: 0;
+        position: relative;
+        padding: 60px 60px 0 60px;
+        background-color: #1C1C1C;
+        border: 1px solid #262626;
+        border-radius: 50px 50px 0 0;
+        overflow: hidden;
+    }
+
+    .vision-image img {
+        width: 100%;
+        max-width: 544px;
+        height: 100%;
+        max-height: 561px;
+    }
+
+    .vision-inner {
+        max-width: 932px;
+        text-align: left;
+        padding-right: 40px;
+        padding-top: 0;
+        border-right: 1px solid #CAFF33;
+    }
+
+    .vision-inner-title {
+        font-size: 38px;
+    }
+
+    .vision-inner-desc {
+        font-size: 18px;
+    }
+
+    .release-section {
+        max-width: 1600px;
+        margin: 120px 0 0 0;
+    }
+
+    .release-title-wrap {
+        text-align: left;
+    }
+
+    .release-title {
+        font-size: 48px;
+    }
+
+    .release-desc {
+        font-size: 18px;
+    }
+
+    .release-list {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .release-card {
+        width: 100%;
+        max-width: 783px;
+        height: 798px;
+        gap: 30px;
+        padding: 24px;
+    }
+
+    .release-card-image img {
+        width: 100%;
+        max-width: 723px;
+        min-height: 277px;
+    }
+
+    .release-card-title {
+        margin-top: 40px;
+        font-size: 24px;
+    }
+
+    .release-card-desc {
+        font-size: 18px;
+    }
+
+    .main-careers-section {
+        width: 100%;
+        max-width: 1600px;
+        position: relative;
+    }
+
+    .careers-title-page {
+        width: 100%;
+        max-width: 1600px;
+        padding: 40px;
+        margin-top: 50px;
+    }
+
+    .careers-image {
+        width: 100%;
+        max-width: 840px;
+        height: auto;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .careers-image img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        display: block;
+    }
+
+    .careers-title-wrap {
+        width: 100%;
+        max-width: 658px;
+        height: 408px;
+        padding: 60px;
+        border-radius: 20px 0 60px 20px;
+        text-align: left;
+        margin-top: 0;
+        position: absolute;
+        top: 85px;
+    }
+
+    .careers-title {
+        font-size: 48px;
+    }
+
+    .careers-desc {
+        font-size: 18px;
+    }
+
+    .values-section {
+        max-width: 1600px;
+    }
+
+    .values-title-wrap {
+        max-width: 1600px;
+        text-align: left;
+    }
+
+    .values-title {
+        font-size: 48px;
+    }
+
+    .values-desc {
+        font-size: 18px;
+    }
+
+    .values-list {
+        margin: 0 auto;
+    }
+
+    .values-inner-item {
+        display: flex;
+        justify-content: center;
+    }
+
+    .values-item:last-child {
+        margin-left: 80px;
+    }
+
+    .values-item {
+        width: 100%;
+        max-width: 758px;
+    }
+
+    .values-title-item {
+        font-size: 58px;
+    }
+
+    .values-desc-item {
+        font-size: 18px;
+    }
+
+    .benefits-section {
+        max-width: 1600px;
+    }
+
+    .benefits-title-wrap {
+        text-align: left;
+    }
+
+    .benefits-inner-wrap {
+        display: flex;
+        justify-content: center;
+    }
+
+    .benefits-title {
+        font-size: 48px;
+    }
+
+    .benefits-desc {
+        font-size: 18px;
+    }
+
+    .benefits-card {
+        width: 100%;
+        max-width: 788px;
+    }
+
+    .benefits-card:nth-child(2) {
+        margin: 0 0 0 50px;
+    }
+
+    .benefits-card-title {
+        font-size: 24px;
+    }
+
+    .benefits-card-description {
+        font-size: 18px;
+    }
+
+    .vacancy-section {
+        max-width: 1600px;
+        margin: 80px 0 0 0;
+    }
+
+    .vacancy-title-wrap {
+        text-align: left;
+    }
+
+    .vacancy-title {
+        font-size: 38px;
+    }
+
+    .vacancy-desc {
+        font-size: 16px;
+    }
+
+    .vacancy-list {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .vacancy-list:nth-child(2) {
+        margin-top: 20px;
+        justify-content: start;
+        max-width: 710px;
+    }
+
+    .vacancy-card {
+        width: 100%;
+        max-width: 783px;
+        margin-top: 0;
+        padding: 40px;
+    }
+
+    .vacancy-card-title {
+        font-size: 24px;
+    }
+
+    .vacancy-about-job {
+        margin: 40px 0 16px 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .vacancy-card-desc {
+        font-size: 16px;
+    }
+
+    .vacancy-requirements-t {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+
+    .vacancy-requirements {
+        font-size: 16px;
     }
 }
