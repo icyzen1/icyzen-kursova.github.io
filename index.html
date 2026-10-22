@@ -7,6 +7,8 @@
     <title>Банківська компанія</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -174,15 +176,16 @@
                 <div class="product-buttons-wrapper">
                     <div class="product-buttons">
                         <div class="products-card">
-                            <span class="text-btn-individual">Для приватних осіб</span>
+                            <button class="tab-btn text-btn-individual activebtn" id="prod-btn-individual">Для приватних
+                                осіб</button>
                         </div>
                         <div class="products-card">
-                            <span class="text-btn-business">Для бізнесу</span>
+                            <button class="tab-btn text-btn-business" id="prod-btn-business">Для бізнесу</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="services-list">
+            <div class="services-list individual-content activecontent">
                 <div class="service-card">
                     <div class="service-logo">
                         <img src="assets/images/icons/checking-accounts-icon.png" alt="" class="service-icon">
@@ -209,6 +212,34 @@
                     <span class="service-description">Втілюйте свої мрії в реальність завдяки нашим гнучким умовам
                         кредитування та іпотеки. Від персональних кредитів до іпотеки на житло — наші досвідчені фахівці
                         допоможуть вам пройти процес подачі заявки та отримати необхідні кошти.</span>
+                </div>
+            </div>
+            <div class="services-list business-content">
+                <div class="service-card">
+                    <div class="service-logo">
+                        <img src="assets/images/icons/checking-accounts-icon.png" alt="" class="service-icon">
+                    </div>
+                    <p class="service-title">Розрахунковий рахунок для бізнесу</p>
+                    <span class="service-description">Швидке відкриття рахунку та вигідні тарифи для підприємців і
+                        компаній. Керуйте фінансами підприємства онлайн, здійснюйте миттєві платежі та отримуйте якісний
+                        сервіс 24/7.</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-logo">
+                        <img src="assets/images/icons/savings-accounts-icon.png" alt="" class="service-icon">
+                    </div>
+                    <p class="service-title">Депозити для юридичних осіб</p>
+                    <span class="service-description">Ефективно розміщуйте вільні кошти вашого підприємства під
+                        конкурентні відсотки. Отримуйте додатковий прибуток для розвитку бізнесу з надійними фінансовими
+                        інструментами.</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-logo">
+                        <img src="assets/images/icons/loans-and-mortgages-icon.png" alt="" class="service-icon">
+                    </div>
+                    <p class="service-title">Кредитування та овердрафти</p>
+                    <span class="service-description">Фінансова підтримка для масштабування вашої справи, поповнення
+                        обігових коштів чи придбання комерційного майна на вигідних та гнучких умовах.</span>
                 </div>
             </div>
         </section>
@@ -456,15 +487,16 @@
                 <div class="testimonials-buttons-wrapper">
                     <div class="testimonials-buttons">
                         <div class="testimonials-card">
-                            <span class="text-btn-individual">Для приватних осіб</span>
+                            <button class="tab-btn text-btn-individual activebtn" id="test-btn-individual">Для приватних
+                                осіб</button>
                         </div>
                         <div class="testimonials-card">
-                            <span class="text-btn-business">Для бізнесу</span>
+                            <button class="tab-btn text-btn-business" id="test-btn-business">Для бізнесу</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="reviews-container animate-box slide-left">
+            <div class="reviews-container review-individual animate-box slide-left activereview">
                 <div class="reviews-card opacity4">
                     <div class="review-header">
                         <img src="assets/images/icons/review-icon.png" alt="" class="review-logo">
@@ -491,6 +523,34 @@
                         контролювати фінанси та здійснювати транзакції на ходу. Додаток зручний і безпечний, що дарує
                         мені цілковитий спокій.</span>
                     <p class="review-author">Емілі Г.</p>
+                </div>
+            </div>
+            <div class="reviews-container review-business animate-box slide-left">
+                <div class="reviews-card opacity4">
+                    <div class="review-header">
+                        <img src="assets/images/icons/review-icon.png" alt="" class="review-logo">
+                    </div>
+                    <span class="review-text">Обслуговування нашого підприємства в YourBank — це бездоганний сервіс та
+                        вигідні тарифи. Корпоративні картки та швидкі платежі значно спростили щоденну роботу
+                        компанії.</span>
+                    <p class="review-author">Олександр М.</p>
+                </div>
+                <div class="reviews-card">
+                    <div class="review-header">
+                        <img src="assets/images/icons/review-icon.png" alt="" class="review-logo">
+                    </div>
+                    <span class="review-text">Завдяки гнучким умовам кредитування та підтримці нашого бізнес-менеджера
+                        ми змогли вчасно закупити обладнання і масштабувати виробництво. Надійний банк для серйозних
+                        справ.</span>
+                    <p class="review-author">Марія К.</p>
+                </div>
+                <div class="reviews-card opacity5">
+                    <div class="review-header">
+                        <img src="assets/images/icons/review-icon.png" alt="" class="review-logo">
+                    </div>
+                    <span class="review-text">Надійний інтернет-банкінг для юридичних осіб. Усі податкові платежі та
+                        зарплатні відомості проводяться в один клік. Це економить купу часу моїй бухгалтерії.</span>
+                    <p class="review-author">Віктор Б.</p>
                 </div>
             </div>
             <div class="review-swipes">
@@ -662,7 +722,9 @@
         </div>
     </div>
     </div>
+
     <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>
