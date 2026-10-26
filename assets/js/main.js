@@ -13,6 +13,30 @@ const openModalSignUpFromLogin = document.getElementById("openModalSignUpFromLog
 const productWrapper = document.querySelectorAll(".product-buttons-wrapper")
 const testimonialWrapper = document.querySelectorAll(".testimonials-buttons-wrapper")
 
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("vacancyInput")
+    const vacancyCard = document.querySelectorAll(".vacancy-card")
+
+    searchInput.addEventListener("input", (event) => {
+        const searchText = event.target.value.toLowerCase().trim()
+
+        vacancyCard.forEach(card => {
+            const titleElem = card.querySelector(".vacancy-card-title")
+            const departmentElem = card.querySelector(".vacancy-department")
+
+            const titletext = titleElem ? titleElem.textContent.toLowerCase().trim() : ""
+            const departmentText = departmentElem ? departmentElem.textContent.toLowerCase().trim() : ""
+
+            if (titletext.includes(searchText) || departmentText.includes(searchText)) {
+                card.style.display = "";
+            }
+            else {
+                card.style.display = "none";
+            }
+        })
+    })
+})
+
 const options = {
     root: null,
     threshold: 0.05
@@ -110,6 +134,40 @@ if (productWrapper) {
     }
 }
 
+const swiperIndividual = new Swiper(".mySwiperIndividual", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    observer: true,
+    observerParents: true,
+    navigation: {
+        nextEl: ".review-swiper-next",
+        prevEl: ".review-swiper-prev"
+    },
+    breakpoints: {
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+    },
+});
+
+const swiperBusiness = new Swiper(".mySwiperBusiness", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    observer: true,
+    observerParents: true,
+    navigation: {
+        nextEl: ".review-swiper-next",
+        prevEl: ".review-swiper-prev"
+    },
+    breakpoints: {
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+    },
+});
+
 if (testimonialWrapper) {
     const testimonialIndividualBtn = document.getElementById('test-btn-individual');
     const testimonialBusinessBtn = document.getElementById('test-btn-business');
@@ -124,6 +182,7 @@ if (testimonialWrapper) {
 
             reviewIndividual.classList.add("activereview")
             reviewBusiness.classList.remove("activereview")
+            swiperIndividual.update()
         })
     }
 
@@ -134,6 +193,7 @@ if (testimonialWrapper) {
 
             reviewBusiness.classList.add("activereview")
             reviewIndividual.classList.remove("activereview")
+            swiperBusiness.update()
         })
     }
 }
