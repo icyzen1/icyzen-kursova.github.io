@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("vacancyInput")
     const vacancyCard = document.querySelectorAll(".vacancy-card")
 
-    searchInput.addEventListener("input", (event) => {
+    if (searchInput) {
+        searchInput.addEventListener("input", (event) => {
         const searchText = event.target.value.toLowerCase().trim()
 
         vacancyCard.forEach(card => {
@@ -35,6 +36,57 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
     })
+    }
+
+    const faqBtn = document.querySelector(".faq-load");
+    const faqList = document.querySelector(".faq-list");
+
+    if (faqBtn && faqList) {
+        faqBtn.addEventListener("click", () => {
+            try {
+                const dataReviews = [
+                    {
+                        title: "Як замовити нову фізичну банківську картку?",
+                        desc: "Ви можете замовити нову картку через наш мобільний додаток у розділі «Картки» або звернувшись до найближчого відділення YourBank. Доставка здійснюється поштою або кур'єром."
+                    },
+                    {
+                        title: "Які ліміти встановлені на зняття готівки в банкоматах?",
+                        desc: "Стандартний добовий ліміт на зняття готівки становить 20 000 грн (або еквівалент у валюті). Ви можете самостійно змінити цей ліміт у налаштуваннях безпеки мобільного додатка."
+                    }
+                ];
+
+
+                const innerWrap = document.createElement("div");
+                innerWrap.className = "faq-inner-wrap";
+
+                dataReviews.forEach(review => {
+                    const faqCard = document.createElement("div");
+                    faqCard.className = "faq-card";
+                    faqCard.style.maskImage = "none";
+
+                    faqCard.innerHTML = `
+                        <div class="faq-card-header">
+                            <p class="faq-card-title">${review.title}</p>
+                        </div>
+                        <span class="faq-card-description">${review.desc}</span>
+                    `;
+                    
+                    innerWrap.appendChild(faqCard);
+                });
+
+                faqList.appendChild(innerWrap);
+                faqBtn.style.display = "none";
+
+                const allCards = document.querySelectorAll(".faq-card")
+                allCards.forEach(card => {
+                    card.style.maskImage = "none";
+                })
+
+            } catch (error) {
+                console.error("Помилка завантаження", error);
+            }
+        });
+    }
 })
 
 const options = {

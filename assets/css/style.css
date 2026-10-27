@@ -979,6 +979,10 @@ body {
     gap: 5px;
 }
 
+.faq-load:hover {
+    cursor: pointer;
+}
+
 .testimonials-section {
     display: flex;
     flex-direction: column;
