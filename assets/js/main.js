@@ -42,19 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const faqList = document.querySelector(".faq-list");
 
     if (faqBtn && faqList) {
-        faqBtn.addEventListener("click", () => {
+        faqBtn.addEventListener("click", async () => {
             try {
-                const dataReviews = [
-                    {
-                        title: "Як замовити нову фізичну банківську картку?",
-                        desc: "Ви можете замовити нову картку через наш мобільний додаток у розділі «Картки» або звернувшись до найближчого відділення YourBank. Доставка здійснюється поштою або кур'єром."
-                    },
-                    {
-                        title: "Які ліміти встановлені на зняття готівки в банкоматах?",
-                        desc: "Стандартний добовий ліміт на зняття готівки становить 20 000 грн (або еквівалент у валюті). Ви можете самостійно змінити цей ліміт у налаштуваннях безпеки мобільного додатка."
-                    }
-                ];
+                const response = await fetch("../dynamic.json")
 
+                if (!response.ok) {
+                    throw new Error(`Помилка завантаження файлу`)
+                }
+
+                const dataReviews = await response.json()
 
                 const innerWrap = document.createElement("div");
                 innerWrap.className = "faq-inner-wrap";
