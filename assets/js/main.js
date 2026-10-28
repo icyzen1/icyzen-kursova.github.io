@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (faqBtn && faqList) {
         faqBtn.addEventListener("click", async () => {
             try {
-                const response = await fetch("../../dynamic.json")
+                const response = await fetch("/dynamic.json")
 
                 if (!response.ok) {
                     throw new Error(`Помилка завантаження файлу`)
