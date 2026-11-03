@@ -780,16 +780,6 @@ body {
     font-weight: 300;
 }
 
-.btn-learn-more {
-    font-size: 0.875rem;
-    font-weight: bold;
-    background-color: var(--bg-div-color);
-    color: #fff;
-    border: 1px solid #262626;
-    border-radius: 82px;
-    padding: 15px 20px;
-}
-
 .use-case-list-extend {
     position: relative;
     max-width: 358px;
@@ -2992,12 +2982,6 @@ footer {
 
     .marg30 {
         margin: 0;
-    }
-
-    .btn-learn-more {
-        margin-top: auto;
-        margin-right: auto;
-        flex-shrink: 0;
     }
 
     .btn-bus {

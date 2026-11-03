@@ -12,6 +12,8 @@ const openModalLoginFromSignUp = document.getElementById("openModalLoginFromSign
 const openModalSignUpFromLogin = document.getElementById("openModalSignUpFromLogin")
 const productWrapper = document.querySelectorAll(".product-buttons-wrapper")
 const testimonialWrapper = document.querySelectorAll(".testimonials-buttons-wrapper")
+const btnOpenAccount1 = document.getElementById("openAccount1")
+const btnOpenAccount2 = document.getElementById("openAccount2")
 
 document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("vacancyInput")
@@ -153,6 +155,13 @@ modalWindowSignUp.addEventListener("click", (event) => {
     }
 });
 
+btnOpenAccount1.addEventListener("click", () => {
+    modalWindowSignUp.classList.add("active")
+})
+
+btnOpenAccount2.addEventListener("click", () => {
+    modalWindowSignUp.classList.add("active")
+})
 
 if (productWrapper) {
     const individualBtn = document.getElementById('prod-btn-individual');
