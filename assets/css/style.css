@@ -83,6 +83,47 @@ body {
     display: none;
 }
 
+.account-logo,
+.account-logo-mobile {
+    display: none !important;
+    position: relative;
+}
+
+.logout-menu-mobile {
+    display: none;
+    position: static;
+    text-align: center;
+}
+
+.logout-mobile {
+    background: none;
+    border: none;
+    color: rgb(219, 66, 66);
+    font-size: 16px;
+}
+
+.logout-mobile:hover {
+    cursor: pointer;
+}
+
+.logout-menu.active,
+.logout-menu-mobile.active {
+    display: block;
+}
+
+.account-logo-mobile.show {
+    display: block !important;
+}
+
+.account-logo-mobile img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin-top: 8px;
+}
+
 .burger-menu {
     display: flex;
     justify-content: center;
@@ -328,7 +369,7 @@ body {
     color: #000;
     width: 22px;
     height: 22px;
-    font-size: 0.75;
+    font-size: 0.75rem;
     text-align: center;
     line-height: 22px;
     border-radius: 27px;
@@ -409,7 +450,7 @@ body {
 .exchange-amount {
     display: block;
     padding: 15px 10px;
-    font-size: 0.625;
+    font-size: 0.625rem;
     font-weight: 500;
 }
 
@@ -724,6 +765,11 @@ body {
     align-items: center;
 }
 
+.case-icon {
+    width: 24px;
+    height: 24px;
+}
+
 .case-card-title {
     font-size: 0.875rem;
     font-weight: bold;
@@ -892,7 +938,7 @@ body {
 }
 
 .feature-icon {
-    width: 24px;
+    width: 14px;
     height: 24px;
 }
 
@@ -2562,6 +2608,37 @@ footer {
         display: block;
     }
 
+    .account-logo.show {
+        display: block !important;
+    }
+
+    .account-logo img {
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    .logout-menu {
+        display: none;
+        position: absolute;
+        text-align: center;
+        z-index: 999;
+    }
+
+    .logout {
+        background: none;
+        border: none;
+        color: rgb(219, 66, 66);
+        font-size: 16px;
+    }
+
+    .logout:hover {
+        cursor: pointer;
+    }
+
     .desktop-menu ul {
         display: flex;
         list-style: none;
@@ -2692,7 +2769,7 @@ footer {
     .transfer-amount {
         top: 33px;
         right: 10px;
-        font-size: 1
+        font-size: 1rem;
     }
 
     .background-arrows {
@@ -3813,10 +3890,14 @@ footer {
     .modal-section,
     .modal-section-login {
         max-width: 1064px;
-        height: 90%;
+        height: 750px;
         padding: 80px 200px;
         display: flex;
         justify-content: center;
+    }
+
+    .modal-section-login {
+        height: 700px !important;
     }
 
     .signup-title {

@@ -1,3 +1,5 @@
+const supabaseClient = window.supabase.createClient("https://mqkkaoyxafjnpxkhomzf.supabase.co", "sb_publishable_ZEvpt8Q5eLdM_Y-YR-0aFA_kgcmdb-C")
+
 const burgerToggle = document.getElementById("burgerToggle")
 const mobileMenu = document.getElementById("mobileMenu")
 const openBtn = document.getElementById("openBtnSignup")
@@ -15,29 +17,30 @@ const testimonialWrapper = document.querySelectorAll(".testimonials-buttons-wrap
 const btnOpenAccount1 = document.getElementById("openAccount1")
 const btnOpenAccount2 = document.getElementById("openAccount2")
 
+
 document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("vacancyInput")
     const vacancyCard = document.querySelectorAll(".vacancy-card")
 
     if (searchInput) {
         searchInput.addEventListener("input", (event) => {
-        const searchText = event.target.value.toLowerCase().trim()
+            const searchText = event.target.value.toLowerCase().trim()
 
-        vacancyCard.forEach(card => {
-            const titleElem = card.querySelector(".vacancy-card-title")
-            const departmentElem = card.querySelector(".vacancy-department")
+            vacancyCard.forEach(card => {
+                const titleElem = card.querySelector(".vacancy-card-title")
+                const departmentElem = card.querySelector(".vacancy-department")
 
-            const titletext = titleElem ? titleElem.textContent.toLowerCase().trim() : ""
-            const departmentText = departmentElem ? departmentElem.textContent.toLowerCase().trim() : ""
+                const titletext = titleElem ? titleElem.textContent.toLowerCase().trim() : ""
+                const departmentText = departmentElem ? departmentElem.textContent.toLowerCase().trim() : ""
 
-            if (titletext.includes(searchText) || departmentText.includes(searchText)) {
-                card.style.display = "";
-            }
-            else {
-                card.style.display = "none";
-            }
+                if (titletext.includes(searchText) || departmentText.includes(searchText)) {
+                    card.style.display = "";
+                }
+                else {
+                    card.style.display = "none";
+                }
+            })
         })
-    })
     }
 
     const faqBtn = document.querySelector(".faq-load");
@@ -68,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         <span class="faq-card-description">${review.desc}</span>
                     `;
-                    
+
                     innerWrap.appendChild(faqCard);
                 });
 
@@ -155,13 +158,17 @@ modalWindowSignUp.addEventListener("click", (event) => {
     }
 });
 
-btnOpenAccount1.addEventListener("click", () => {
-    modalWindowSignUp.classList.add("active")
-})
+if (btnOpenAccount1) {
+    btnOpenAccount1.addEventListener("click", () => {
+        modalWindowSignUp.classList.add("active")
+    })
+}
 
-btnOpenAccount2.addEventListener("click", () => {
-    modalWindowSignUp.classList.add("active")
-})
+if (btnOpenAccount2) {
+    btnOpenAccount2.addEventListener("click", () => {
+        modalWindowSignUp.classList.add("active")
+    })
+}
 
 if (productWrapper) {
     const individualBtn = document.getElementById('prod-btn-individual');
@@ -252,5 +259,168 @@ if (testimonialWrapper) {
             reviewIndividual.classList.remove("activereview")
             swiperBusiness.update()
         })
+    }
+}
+
+const regSubmitBtn = document.getElementById("regSubmitBtn")
+const loginSubmitBtn = document.getElementById("loginSubmitBtn")
+
+if (regSubmitBtn) {
+    regSubmitBtn.addEventListener("click", async () => {
+        const firstName = document.getElementById("reg-firstname").value.trim()
+        const lastName = document.getElementById("reg-lastname").value.trim()
+        const email = document.getElementById("reg-email").value.trim()
+        const password = document.getElementById("reg-password").value.trim()
+
+        if (!firstName || !lastName || !email || !password) {
+            alert("Поля не можуть бути пустими")
+            return
+        }
+
+        try {
+            const { data: authData, error: authError } = await supabaseClient.auth.signUp({
+                email: email,
+                password: password
+            });
+
+            if (authError) throw authError
+
+            const userId = authData.user.id
+
+            const { error: profileError } = await supabaseClient
+                .from("profiles")
+                .insert([
+                    {
+                        id: userId,
+                        first_name: firstName,
+                        last_name: lastName,
+                        email: email
+                    }
+                ]);
+
+            if (profileError) throw profileError
+
+            alert("Реєстрація успішна")
+
+            document.getElementById("reg-firstname").value = ""
+            document.getElementById("reg-lastname").value = ""
+            document.getElementById("reg-email").value = ""
+            document.getElementById("reg-password").value = ""
+        }
+        catch (error) {
+            alert("Помилка: " + error.message)
+        }
+    })
+}
+
+const navbarActions = document.getElementById("navbarActions")
+const accountLogo = document.getElementById("accountLogo")
+const accountLogoMobile = document.getElementById("accountLogoMobile")
+
+if (loginSubmitBtn) {
+    loginSubmitBtn.addEventListener("click", async () => {
+        const email = document.getElementById("login-email").value.trim()
+        const password = document.getElementById("login-password").value.trim()
+
+        if (!email || !password) {
+            alert("Поля не можуть бути пустими")
+        }
+
+        try {
+            const { data, error } = await supabaseClient.auth.signInWithPassword({
+                email: email,
+                password: password
+            })
+
+            if (error) {
+                throw error
+            }
+            else {
+                alert("Вхід успішний")
+            }
+
+            modalWindowLogin.classList.remove("active")
+            navbarActions.style.display = "none"
+            accountLogo.classList.add("show")
+
+            /*мобільна верстка*/
+            openBtn.style.display = "none"
+            openBtnLogin.style.display = "none"
+            accountLogoMobile.classList.add("show")
+
+            /**кнопки забираються, додається аватарка, закривається модалка*/
+            document.getElementById("login-email").value = ""
+            document.getElementById("login-password").value = ""
+        }
+        catch (error) {
+            alert("Помилка: " + error.message)
+        }
+    })
+}
+
+accountLogoMobile.addEventListener("click", () => {
+    const logoutAccountMenu = document.getElementById("logoutMenuMobile")
+    const logoutAccountMobileBtn = document.getElementById("logoutAccountMobile")
+    logoutAccountMenu.classList.toggle("active")
+
+    logoutAccountMobileBtn.addEventListener("click", async () => {
+        const { error } = await supabaseClient.auth.signOut()
+
+        if (error) {
+            throw error
+        }
+        else {
+            alert("Ви вийшли з аккаунта")
+            logoutAccountMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+            await checkAuthOnLoad()
+        }
+    })
+})
+
+accountLogo.addEventListener("click", () => {
+    const logoutAccount = document.getElementById("logoutMenu")
+    const logoutAccountBtn = document.getElementById("logoutAccount")
+    logoutAccount.classList.toggle("active")
+
+    logoutAccountBtn.addEventListener("click", async () => {
+        const { error } = await supabaseClient.auth.signOut()
+
+        if (error) {
+            throw error
+        }
+        else {
+            alert("Ви вийшли з аккаунта")
+            logoutAccount.classList.remove("active")
+            await checkAuthOnLoad()
+        }
+    })
+})
+
+async function checkAuthOnLoad() {
+    const { data: { session }, error } = await supabaseClient.auth.getSession();
+
+
+    if (session && !error) {
+        if (navbarActions) navbarActions.style.display = "none";
+        if (openBtn) openBtn.style.display = "none";
+        if (openBtnLogin) openBtnLogin.style.display = "none";
+
+        if (accountLogo) accountLogo.classList.add("show");
+        if (accountLogoMobile) accountLogoMobile.classList.add("show");
+    }
+    else {
+        const isMobile = window.innerWidth <= 1024;
+
+        if (!isMobile) {
+            if (navbarActions) navbarActions.style.display = "block";
+        } else {
+            if (navbarActions) navbarActions.style.display = "none";
+            if (openBtn) openBtn.style.display = "inline-block";
+            if (openBtnLogin) openBtnLogin.style.display = "inline-block";
+        }
+
+        if (accountLogo) accountLogo.classList.remove("show");
+        if (accountLogoMobile) accountLogoMobile.classList.remove("show");
     }
 }

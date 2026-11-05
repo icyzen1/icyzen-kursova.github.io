@@ -7,6 +7,9 @@
     <title>Банківська компанія</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -16,7 +19,7 @@
             <header class="navbar">
                 <div class="logo-container">
                     <a href="index.html">
-                        <img src="assets/images/icons/logo.png" alt="" class="logo">
+                        <img src="assets/images/icons/logo.svg" alt="Логотип YourBank" class="logo">
                         <span class="logo-text">YourBanK</span>
                     </a>
                 </div>
@@ -28,9 +31,15 @@
                         <li><a href="security.html">Безпека</a></li>
                     </ul>
                 </nav>
-                <div class="navbar-actions">
+                <div class="navbar-actions" id="navbarActions">
                     <a href="#" class="btn-signup" id="openBtnSignupDesktop">Реєстрація</a>
                     <a href="#" class="btn-login" id="openBtnLoginDesktop">Вхід</a>
+                </div>
+                <div class="account-logo" id="accountLogo">
+                    <img src="assets/images/test-img.jpg" alt="Іконка профілю">
+                    <div class="logout-menu" id = "logoutMenu">
+                        <button class="logout" id = "logoutAccount">Вийти</button>
+                    </div>
                 </div>
                 <div class="burger-menu" id="burgerToggle">
                     <i class="fa-solid fa-bars"></i>
@@ -44,6 +53,12 @@
                     </ul>
                     <button class="mobile-sign-up" id="openBtnSignup">Реєстрація</button>
                     <button class="mobile-login" id="openBtnLogin">Вхід</button>
+                    <div class="account-logo-mobile" id="accountLogoMobile">
+                        <img src="assets/images/test-img.jpg" alt="Іконка профілю">
+                        <div class="logout-menu-mobile" id = "logoutMenuMobile">
+                            <button class="logout-mobile" id = "logoutAccountMobile">Вийти</button>
+                        </div>
+                    </div>
                 </nav>
             </header>
         </div>
@@ -51,7 +66,7 @@
         <section class="main-about-section">
             <div class="about-title-page">
                 <div class="about-image">
-                    <img src="assets/images/about-image.png" alt="Security">
+                    <img src="assets/images/about-image.png" alt="Зображення про компанію">
                 </div>
                 <div class="about-title-wrap">
                     <p class="about-welcome animate-box slide-left">Ласкаво просимо до YourBank</p>
@@ -77,7 +92,7 @@
             </div>
             <div class="mission-wrap">
                 <div class="mission-image">
-                    <img src="assets/images/mission-image.png" alt="">
+                    <img src="assets/images/mission-image.png" alt="Зображення місії компанії">
                 </div>
                 <div class="mission-inner">
                     <p class="mission-inner-title">Місія</p>
@@ -92,7 +107,7 @@
 
             <div class="vision-wrap">
                 <div class="vision-image">
-                    <img src="assets/images/vision-image.png" alt="">
+                    <img src="assets/images/vision-image.png" alt="Зображення бачення компанії">
                 </div>
                 <div class="vision-inner">
                     <p class="vision-inner-title">Бачення</p>
@@ -116,7 +131,7 @@
                 <div class="release-list">
                     <div class="release-card">
                         <div class="release-card-image">
-                            <img src="assets/images/release-image-1.png" alt="">
+                            <img src="assets/images/release-image-1.png" alt="Зображення прес-релізу 1">
                         </div>
                         <div class="release-inner-card">
                             <p class="release-card-title">YourBank запускає нову програму винагород для підвищення
@@ -136,7 +151,7 @@
                     </div>
                     <div class="release-card">
                         <div class="release-card-image">
-                            <img src="assets/images/release-image-2.png" alt="">
+                            <img src="assets/images/release-image-2.png" alt="Зображення прес-релізу 2">
                         </div>
                         <div class="release-inner-card">
                             <p class="release-card-title">YourBank розширює мережу відділень із відкриттям нової локації
@@ -159,7 +174,7 @@
                 <div class="release-list">
                     <div class="release-card">
                         <div class="release-card-image">
-                            <img src="assets/images/release-image-3.png" alt="">
+                            <img src="assets/images/release-image-3.png" alt="Зображення прес-релізу 3">
                         </div>
                         <div class="release-inner-card">
                             <p class="release-card-title">YourBank співпрацює з місцевою некомерційною організацією для
@@ -180,7 +195,7 @@
                     </div>
                     <div class="release-card">
                         <div class="release-card-image">
-                            <img src="assets/images/release-image-4.png" alt="">
+                            <img src="assets/images/release-image-4.png" alt="Зображення прес-релізу 4">
                         </div>
                         <div class="release-inner-card">
                             <p class="release-card-title">YourBank запускає Ініціативу сталого банківського
@@ -208,7 +223,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo-container">
-                <img src="assets/images/icons/logo.png" alt="" class="footer-logo-icon">
+                <img src="assets/images/icons/logo.svg" alt="Логотип YourBank у футері" class="footer-logo-icon">
                 <span class="footer-title">YourBanK</span>
             </div>
             <div class="footer-list">
@@ -222,19 +237,19 @@
             <div class="contact-container">
                 <div class="contact-item">
                     <a href="#">
-                        <img src="assets/images/icons/email-footer-icon.png" alt="">
+                        <img src="assets/images/icons/email-footer-icon.png" alt="Іконка електронної пошти">
                         <span class="contact-data">hello@skillbirdge.com</span>
                     </a>
                 </div>
                 <div class="contact-item">
                     <a href="#">
-                        <img src="assets/images/icons/tel-footer-icon.png" alt="">
+                        <img src="assets/images/icons/tel-footer-icon.png" alt="Іконка телефону">
                         <span class="contact-data">+91 91813 23 2309</span>
                     </a>
                 </div>
                 <div class="contact-item item-bottom">
                     <a href="#">
-                        <img src="assets/images/icons/geo-footer-icon.png" alt="">
+                        <img src="assets/images/icons/geo-footer-icon.png" alt="Іконка геолокації">
                         <span class="contact-data">Десь у світі</span>
                     </a>
                 </div>
@@ -244,17 +259,17 @@
             <div class="social-networks">
                 <div class="social-card card-facebook">
                     <a href="#">
-                        <img src="assets/images/icons/facebook-footer-icon.png" alt="">
+                        <img src="assets/images/icons/facebook-footer-icon.png" alt="Іконка Facebook">
                     </a>
                 </div>
                 <div class="social-card card-twitter">
                     <a href="#">
-                        <img src="assets/images/icons/twitter-footer-icon.png" alt="">
+                        <img src="assets/images/icons/twitter-footer-icon.png" alt="Іконка Twitter">
                     </a>
                 </div>
                 <div class="social-card card-instagram">
                     <a href="#">
-                        <img src="assets/images/icons/instagram-footer-icon.png" alt="">
+                        <img src="assets/images/icons/instagram-footer-icon.png" alt="Іконка Instagram">
                     </a>
                 </div>
             </div>
@@ -289,17 +304,17 @@
                 <div class="modal-social">
                     <div class="social-card-form">
                         <a href="#">
-                            <img src="assets/images/icons/google-icon.png" alt="">
+                            <img src="assets/images/icons/google-icon.png" alt="Іконка Google">
                         </a>
                     </div>
                     <div class="social-card-form">
                         <a href="#">
-                            <img src="assets/images/icons/facebook-icon.png" alt="">
+                            <img src="assets/images/icons/facebook-icon.png" alt="Іконка Facebook">
                         </a>
                     </div>
                     <div class="social-card-form">
                         <a href="#">
-                            <img src="assets/images/icons/apple-icon.png" alt="">
+                            <img src="assets/images/icons/apple-icon.png" alt="Іконка Apple">
                         </a>
                     </div>
                 </div>
@@ -331,17 +346,17 @@
                 <div class="modal-social">
                     <div class="social-card-form">
                         <a href="#">
-                            <img src="assets/images/icons/google-icon.png" alt="">
+                            <img src="assets/images/icons/google-icon.png" alt="Іконка Google">
                         </a>
                     </div>
                     <div class="social-card-form">
                         <a href="#">
-                            <img src="assets/images/icons/facebook-icon.png" alt="">
+                            <img src="assets/images/icons/facebook-icon.png" alt="Іконка Facebook">
                         </a>
                     </div>
                     <div class="social-card-form">
                         <a href="#">
-                            <img src="assets/images/icons/apple-icon.png" alt="">
+                            <img src="assets/images/icons/apple-icon.png" alt="Іконка Apple">
                         </a>
                     </div>
                 </div>
