@@ -407,29 +407,33 @@ if (logoutAccountBtn) {
     }
 
 async function checkAuthOnLoad() {
-    const { data: { session }, error } = await supabaseClient.auth.getSession();
+    const { data: { session }, error } = await supabaseClient.auth.getSession()
 
 
     if (session && !error) {
-        if (navbarActions) navbarActions.style.display = "none";
-        if (openBtn) openBtn.style.display = "none";
-        if (openBtnLogin) openBtnLogin.style.display = "none";
+        if (navbarActions) navbarActions.style.display = "none"
+        if (openBtn) openBtn.style.display = "none"
+        if (openBtnLogin) openBtnLogin.style.display = "none"
 
-        if (accountLogo) accountLogo.classList.add("show");
-        if (accountLogoMobile) accountLogoMobile.classList.add("show");
+        if (accountLogo) accountLogo.classList.add("show")
+        if (accountLogoMobile) accountLogoMobile.classList.add("show")
     }
     else {
-        const isMobile = window.innerWidth <= 1024;
+        const isMobile = window.innerWidth <= 1024
 
         if (!isMobile) {
-            if (navbarActions) navbarActions.style.display = "block";
+            if (navbarActions) navbarActions.style.display = "block"
         } else {
-            if (navbarActions) navbarActions.style.display = "none";
-            if (openBtn) openBtn.style.display = "inline-block";
-            if (openBtnLogin) openBtnLogin.style.display = "inline-block";
+            if (navbarActions) navbarActions.style.display = "none"
+            if (openBtn) openBtn.style.display = "inline-block"
+            if (openBtnLogin) openBtnLogin.style.display = "inline-block"
         }
 
-        if (accountLogo) accountLogo.classList.remove("show");
-        if (accountLogoMobile) accountLogoMobile.classList.remove("show");
+        if (accountLogo) accountLogo.classList.remove("show")
+        if (accountLogoMobile) accountLogoMobile.classList.remove("show")
     }
 }
+
+window.addEventListener("resize", () => {
+    checkAuthOnLoad()
+})

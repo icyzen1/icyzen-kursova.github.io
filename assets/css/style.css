@@ -83,6 +83,10 @@ body {
     display: none;
 }
 
+.navbar-actions.hidden {
+    display: none !important;
+}
+
 .account-logo,
 .account-logo-mobile {
     display: none !important;
