@@ -322,11 +322,21 @@ const accountLogoMobile = document.getElementById("accountLogoMobile")
 
 if (loginSubmitBtn) {
     loginSubmitBtn.addEventListener("click", async () => {
+        const sessionData = await supabaseClient.auth.getSession()
+        const session = sessionData?.data?.session
+
+        if (session) {
+            alert("Помилка: Ви вже увійшли в аккаунт")
+            modalWindowLogin.classList.remove("active")
+            return
+        }
+
         const email = document.getElementById("login-email").value.trim()
         const password = document.getElementById("login-password").value.trim()
 
         if (!email || !password) {
             alert("Поля не можуть бути пустими")
+            return
         }
 
         try {
