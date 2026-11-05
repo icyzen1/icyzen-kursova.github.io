@@ -18,7 +18,10 @@ const btnOpenAccount1 = document.getElementById("openAccount1")
 const btnOpenAccount2 = document.getElementById("openAccount2")
 
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    await checkAuthOnLoad()
+
+
     const searchInput = document.getElementById("vacancyInput")
     const vacancyCard = document.querySelectorAll(".vacancy-card")
 
@@ -343,12 +346,10 @@ if (loginSubmitBtn) {
             navbarActions.style.display = "none"
             accountLogo.classList.add("show")
 
-            /*мобільна верстка*/
             openBtn.style.display = "none"
             openBtnLogin.style.display = "none"
             accountLogoMobile.classList.add("show")
 
-            /**кнопки забираються, додається аватарка, закривається модалка*/
             document.getElementById("login-email").value = ""
             document.getElementById("login-password").value = ""
         }
@@ -358,11 +359,14 @@ if (loginSubmitBtn) {
     })
 }
 
-accountLogoMobile.addEventListener("click", () => {
-    const logoutAccountMenu = document.getElementById("logoutMenuMobile")
-    const logoutAccountMobileBtn = document.getElementById("logoutAccountMobile")
-    logoutAccountMenu.classList.toggle("active")
 
+const logoutAccountMenu = document.getElementById("logoutMenuMobile")
+const logoutAccountMobileBtn = document.getElementById("logoutAccountMobile")
+accountLogoMobile.addEventListener("click", () => {
+    logoutAccountMenu.classList.toggle("active")
+})
+
+if (logoutAccountMobileBtn) {
     logoutAccountMobileBtn.addEventListener("click", async () => {
         const { error } = await supabaseClient.auth.signOut()
 
@@ -373,29 +377,34 @@ accountLogoMobile.addEventListener("click", () => {
             alert("Ви вийшли з аккаунта")
             logoutAccountMenu.classList.remove("active")
             mobileMenu.classList.remove("active")
+            location.reload()
             await checkAuthOnLoad()
         }
     })
-})
+}
 
+
+const logoutAccount = document.getElementById("logoutMenu")
+const logoutAccountBtn = document.getElementById("logoutAccount")
 accountLogo.addEventListener("click", () => {
-    const logoutAccount = document.getElementById("logoutMenu")
-    const logoutAccountBtn = document.getElementById("logoutAccount")
     logoutAccount.classList.toggle("active")
-
-    logoutAccountBtn.addEventListener("click", async () => {
-        const { error } = await supabaseClient.auth.signOut()
-
-        if (error) {
-            throw error
-        }
-        else {
-            alert("Ви вийшли з аккаунта")
-            logoutAccount.classList.remove("active")
-            await checkAuthOnLoad()
-        }
-    })
 })
+
+if (logoutAccountBtn) {
+        logoutAccountBtn.addEventListener("click", async () => {
+            const { error } = await supabaseClient.auth.signOut()
+
+            if (error) {
+                throw error
+            }
+            else {
+                alert("Ви вийшли з аккаунта")
+                logoutAccount.classList.remove("active")
+                location.reload()
+                await checkAuthOnLoad()
+            }
+        })
+    }
 
 async function checkAuthOnLoad() {
     const { data: { session }, error } = await supabaseClient.auth.getSession();

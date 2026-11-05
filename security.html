@@ -36,7 +36,7 @@
                     <a href="#" class="btn-login" id="openBtnLoginDesktop">Вхід</a>
                 </div>
                 <div class="account-logo" id="accountLogo">
-                    <img src="assets/images/test-img.jpg" alt="Іконка профілю">
+                    <img src="assets/images/profile-avatar.png" alt="Іконка профілю">
                     <div class="logout-menu" id = "logoutMenu">
                         <button class="logout" id = "logoutAccount">Вийти</button>
                     </div>
@@ -268,16 +268,16 @@
                 </div>
                 <div class="forms-input">
                     <div class="forms-card">
-                        <input type="text" placeholder="Введіть ім'я">
-                        <input type="text" placeholder="Введіть прізвище">
+                        <input type="text" id="reg-firstname" placeholder="Введіть ім'я" required>
+                        <input type="text" id="reg-lastname" placeholder="Введіть прізвище" required>
                     </div>
                     <div class="forms-card">
-                        <input type="email" placeholder="Введіть свій Email">
-                        <input type="password" placeholder="Введіть свій пароль">
+                        <input type="email" id="reg-email" placeholder="Введіть свій Email" required>
+                        <input type="password" id="reg-password" placeholder="Введіть свій пароль" required>
                     </div>
                 </div>
                 <div class="form-buttons">
-                    <button class="form-btn-signup">Реєстрація</button>
+                    <button class="form-btn-signup" id="regSubmitBtn">Реєстрація</button>
                     <button class="form-btn-login" id="openModalLoginFromSignUp">Вхід</button>
                 </div>
                 <p class="continue-signup">Або продовжити через</p>
@@ -312,14 +312,14 @@
                         облікового запису.</p>
                 </div>
                 <div class="forms-input">
-                    <input type="email" placeholder="Введіть свій Email">
-                    <input type="password" placeholder="Введіть свій пароль">
+                    <input type="email" id="login-email" placeholder="Введіть свій Email" required>
+                    <input type="password" id="login-password" placeholder="Введіть свій пароль" required>
                 </div>
                 <div class="form-forgot-password">
                     <a href="">Забули пароль?</a>
                 </div>
                 <div class="form-buttons">
-                    <button class="login-form-btn-login">Вхід</button>
+                    <button class="login-form-btn-login" id="loginSubmitBtn">Вхід</button>
                     <button class="login-form-btn-signup" id="openModalSignUpFromLogin">Реєстрація</button>
                 </div>
                 <p class="continue-signup">Або продовжити через</p>
