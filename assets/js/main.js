@@ -387,7 +387,7 @@ if (logoutAccountMobileBtn) {
             alert("Ви вийшли з аккаунта")
             logoutAccountMenu.classList.remove("active")
             mobileMenu.classList.remove("active")
-            location.reload()
+            window.location.href = "index.html"
             await checkAuthOnLoad()
         }
     })
@@ -401,20 +401,20 @@ accountLogo.addEventListener("click", () => {
 })
 
 if (logoutAccountBtn) {
-        logoutAccountBtn.addEventListener("click", async () => {
-            const { error } = await supabaseClient.auth.signOut()
+    logoutAccountBtn.addEventListener("click", async () => {
+        const { error } = await supabaseClient.auth.signOut()
 
-            if (error) {
-                throw error
-            }
-            else {
-                alert("Ви вийшли з аккаунта")
-                logoutAccount.classList.remove("active")
-                location.reload()
-                await checkAuthOnLoad()
-            }
-        })
-    }
+        if (error) {
+            throw error
+        }
+        else {
+            alert("Ви вийшли з аккаунта")
+            logoutAccount.classList.remove("active")
+            window.location.href = "index.html"
+            await checkAuthOnLoad()
+        }
+    })
+}
 
 async function checkAuthOnLoad() {
     const { data: { session }, error } = await supabaseClient.auth.getSession()
@@ -442,8 +442,156 @@ async function checkAuthOnLoad() {
         if (accountLogo) accountLogo.classList.remove("show")
         if (accountLogoMobile) accountLogoMobile.classList.remove("show")
     }
+
+    const profileSection = document.getElementById("profileSection")
+
+    if (session) {
+        if (profileSection) profileSection.style.display = "block";
+        loadUserProfile(session.user);
+    } else {
+        if (profileSection) profileSection.style.display = "none";
+    }
 }
 
 window.addEventListener("resize", () => {
     checkAuthOnLoad()
 })
+
+
+/*профіль*/
+
+async function loadUserProfile(user) {
+    const { data: profileData } = await supabaseClient
+        .from('profiles')
+        .select('*')
+        .eq('id', user.id)
+        .single();
+
+    const profileFirstName = document.getElementById("profileFirstName")
+    const profileLastName = document.getElementById("profileLastName")
+
+    if (profileData) {
+        if (profileFirstName) profileFirstName.innerText = profileData.first_name || ''
+        if (profileLastName) profileLastName.innerText = profileData.last_name || ''
+    }
+
+    const profileEmail = document.getElementById("profileEmail")
+    if (profileEmail) profileEmail.innerText = user.email;
+
+    const { data: infoData } = await supabaseClient
+        .from('profiles_info')
+        .select('*')
+        .eq('user_id', user.id)
+        .maybeSingle();
+
+    if (infoData) {
+        if (phoneNumberSpan) phoneNumberSpan.innerHTML = infoData.phone_number || ''
+        if (addressSpan) addressSpan.innerHTML = infoData.address || ''
+    }
+}
+
+const appendPhoneBtn = document.getElementById("savePhoneBtn")
+const phoneNumberSpan = document.getElementById("phoneDisplay")
+
+if (appendPhoneBtn) {
+    appendPhoneBtn.addEventListener("click", async () => {
+        const phone = prompt("Введіть ваш номер телефону:")
+        const isOnlyNumbers = /^\d+$/.test(phone)
+        if (!isOnlyNumbers || phone.length !== 10) {
+            alert("Номер має містити 10 цифр і має складатись із цифр")
+            return
+        }
+
+        const { data: { session } } = await supabaseClient.auth.getSession()
+        if (!session) return
+        const user = session.user
+
+        const { data: existing } = await supabaseClient
+            .from("profiles_info")
+            .select("id")
+            .eq("user_id", user.id)
+            .maybeSingle();
+
+        let error
+
+        if (existing) {
+            const res = await supabaseClient.from("profiles_info").update({ phone_number: phone }).eq("user_id", user.id)
+            error = res.error
+        }
+        else {
+            const res = await supabaseClient.from("profiles_info").insert([{ user_id: user.id, phone_number: phone }])
+            error = res.error
+        }
+
+        if (error) {
+            alert("Помилка: ", error.message)
+        }
+        else {
+            phoneNumberSpan.innerHTML = phone
+            appendPhoneBtn.innerHTML = "Змінити"
+            alert("Номер успішно збережено")
+        }
+    })
+}
+
+
+const appendAddressBtn = document.getElementById("saveAddressBtn")
+const addressSpan = document.getElementById("addressDisplay")
+
+if (appendAddressBtn) {
+    appendAddressBtn.addEventListener("click", async () => {
+        const address = prompt("Введіть ваш адрес:")
+
+        const { data: { session } } = await supabaseClient.auth.getSession()
+        if (!session) return
+        const user = session.user
+
+        const { data: existing } = await supabaseClient
+            .from("profiles_info")
+            .select("id")
+            .eq("user_id", user.id)
+            .maybeSingle();
+
+        let error
+
+        if (existing) {
+            const res = await supabaseClient.from("profiles_info").update({ address: address }).eq("user_id", user.id)
+            error = res.error
+        }
+        else {
+            const res = await supabaseClient.from("profiles_info").insert([{ user_id: user.id, address: address }])
+            error = res.error
+        }
+
+        if (error) {
+            alert("Помилка: ", error.message)
+        }
+        else {
+            addressSpan.innerHTML = address
+            alert("Адрес успішно збережено")
+        }
+    })
+}
+
+const deleteAddressBtn = document.getElementById("deleteAddressBtn")
+
+if (deleteAddressBtn) {
+    deleteAddressBtn.addEventListener("click", async () => {
+        const { data: { session } } = await supabaseClient.auth.getSession()
+        if (!session) return
+        const user = session.user
+
+        const { error } = await supabaseClient
+            .from("profiles_info")
+            .update({ address: "Не вказано" })
+            .eq("user_id", user.id)
+
+        if (error) {
+            alert("Помилка: ", error.message)
+        }
+        else {
+            addressSpan.innerHTML = "Не вказано"
+            alert("Адресу успішно видалено")
+        }
+    })
+}

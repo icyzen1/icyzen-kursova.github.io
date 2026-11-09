@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банківська компанія</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-wrap">
+        <div class="background-img"></div>
+        <div class="background-wrap">
+            <header class="navbar">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="assets/images/icons/logo.svg" alt="Логотип YourBank" class="logo">
+                        <span class="logo-text">YourBanK</span>
+                    </a>
+                </div>
+                <nav class="desktop-menu">
+                    <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="careers.html">Кар'єра</a></li>
+                        <li><a href="about.html">Про нас</a></li>
+                        <li><a href="security.html">Безпека</a></li>
+                    </ul>
+                </nav>
+                <div class="navbar-actions" id="navbarActions">
+                    <a href="#" class="btn-signup" id="openBtnSignupDesktop">Реєстрація</a>
+                    <a href="#" class="btn-login" id="openBtnLoginDesktop">Вхід</a>
+                </div>
+                <div class="account-logo" id="accountLogo">
+                    <img src="assets/images/profile-avatar.png" alt="Іконка профілю">
+                    <div class="logout-menu" id="logoutMenu">
+                        <button class="logout profile-logout" id="logoutAccount">Вийти</button>
+                    </div>
+                </div>
+                <div class="burger-menu" id="burgerToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <nav class="mobile-menu" id="mobileMenu">
+                    <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="careers.html">Кар'єра</a></li>
+                        <li><a href="about.html">Про нас</a></li>
+                        <li><a href="security.html">Безпека</a></li>
+                    </ul>
+                    <button class="mobile-sign-up" id="openBtnSignup">Реєстрація</button>
+                    <button class="mobile-login" id="openBtnLogin">Вхід</button>
+                    <div class="account-logo-mobile" id="accountLogoMobile">
+                        <img src="assets/images/profile-avatar.png" alt="Іконка профілю">
+                        <div class="logout-menu-mobile" id="logoutMenuMobile">
+                            <button class="logout-mobile" id="logoutAccountMobile">Вийти</button>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+
+        <section class="profile-section" id="profileSection">
+            <div class="profile-card-large">
+                <div class="profile-top-box">
+                    <img src="assets/images/profile-avatar.png" alt="Аватар користувача" class="profile-avatar-img">
+                    <div class="profile-user-info">
+                        <h3 id="profileFullName"><span id="profileFirstName">Завантаження...</span> <span
+                                id="profileLastName"></span></h3>
+                        <p id="profileEmail">Завантаження...</p>
+                    </div>
+                </div>
+                <div class="profile-field-row">
+                    <span class="field-label-title">Номер телефону</span>
+                    <div class="field-content-box">
+                        <span id="phoneDisplay">Не вказано</span>
+                        <button id="savePhoneBtn" class="btn-subtle-save">Додати номер</button>
+                    </div>
+                </div>
+                <div class="profile-field-row">
+                    <span class="field-label-title">Адреса проживання</span>
+                    <div class="field-content-box">
+                        <span id="addressDisplay">Не вказано</span>
+                        <button id="saveAddressBtn" class="btn-subtle-save">Додати</button>
+                        <button id="deleteAddressBtn" class="btn-subtle-delete">Видалити</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-container">
+                <img src="assets/images/icons/logo.svg" alt="Логотип YourBank у футері" class="footer-logo-icon">
+                <span class="footer-title">YourBanK</span>
+            </div>
+            <div class="footer-list">
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="careers.html">Кар'єра</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="security.html">Безпека</a></li>
+                </ul>
+            </div>
+            <div class="contact-container">
+                <div class="contact-item">
+                    <a href="#">
+                        <img src="assets/images/icons/email-footer-icon.png" alt="Іконка електронної пошти">
+                        <span class="contact-data">hello@skillbirdge.com</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="#">
+                        <img src="assets/images/icons/tel-footer-icon.png" alt="Іконка телефону">
+                        <span class="contact-data">+91 91813 23 2309</span>
+                    </a>
+                </div>
+                <div class="contact-item item-bottom">
+                    <a href="#">
+                        <img src="assets/images/icons/geo-footer-icon.png" alt="Іконка геолокації">
+                        <span class="contact-data">Десь у світі</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="social-networks-container">
+            <div class="social-networks">
+                <div class="social-card card-facebook">
+                    <a href="#">
+                        <img src="assets/images/icons/facebook-footer-icon.png" alt="Іконка Facebook">
+                    </a>
+                </div>
+                <div class="social-card card-twitter">
+                    <a href="#">
+                        <img src="assets/images/icons/twitter-footer-icon.png" alt="Іконка Twitter">
+                    </a>
+                </div>
+                <div class="social-card card-instagram">
+                    <a href="#">
+                        <img src="assets/images/icons/instagram-footer-icon.png" alt="Іконка Instagram">
+                    </a>
+                </div>
+            </div>
+            <a href="#" class="rights-reserved">YourBank Усі права захищені</a>
+            <a href="#" class="privacy-policy">Політика конфіденційності | Умови використання</a>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="modalWindowSignUp">
+        <div class="modal-section">
+            <div class="signup-form">
+                <div class="signup-header">
+                    <p class="signup-title yellow">Реєстрація</p>
+                    <p class="signup-description">Приєднуйтесь до нашої спільноти вже сьогодні! Створіть обліковий
+                        запис, щоб відкрити ексклюзивні можливості та персоналізований досвід.</p>
+                </div>
+                <div class="forms-input">
+                    <div class="forms-card">
+                        <input type="text" id="reg-firstname" placeholder="Введіть ім'я" required>
+                        <input type="text" id="reg-lastname" placeholder="Введіть прізвище" required>
+                    </div>
+                    <div class="forms-card">
+                        <input type="email" id="reg-email" placeholder="Введіть свій Email" required>
+                        <input type="password" id="reg-password" placeholder="Введіть свій пароль" required>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button class="form-btn-signup" id="regSubmitBtn">Реєстрація</button>
+                    <button class="form-btn-login" id="openModalLoginFromSignUp">Вхід</button>
+                </div>
+                <p class="continue-signup">Або продовжити через</p>
+                <div class="modal-social">
+                    <div class="social-card-form">
+                        <a href="#">
+                            <img src="assets/images/icons/google-icon.png" alt="Іконка Google">
+                        </a>
+                    </div>
+                    <div class="social-card-form">
+                        <a href="#">
+                            <img src="assets/images/icons/facebook-icon.png" alt="Іконка Facebook">
+                        </a>
+                    </div>
+                    <div class="social-card-form">
+                        <a href="#">
+                            <img src="assets/images/icons/apple-icon.png" alt="Іконка Apple">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="close-btn-form" id="closeBtnSignUp"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalWindowLogin">
+        <div class="modal-section-login">
+            <div class="signup-form">
+                <div class="signup-header">
+                    <p class="signup-title yellow">Вхід</p>
+                    <p class="signup-description">З поверненням! Будь ласка, увійдіть, щоб отримати доступ до свого
+                        облікового запису.</p>
+                </div>
+                <div class="forms-input">
+                    <input type="email" id="login-email" placeholder="Введіть свій Email" required>
+                    <input type="password" id="login-password" placeholder="Введіть свій пароль" required>
+                </div>
+                <div class="form-forgot-password">
+                    <a href="">Забули пароль?</a>
+                </div>
+                <div class="form-buttons">
+                    <button class="login-form-btn-login" id="loginSubmitBtn">Вхід</button>
+                    <button class="login-form-btn-signup" id="openModalSignUpFromLogin">Реєстрація</button>
+                </div>
+                <p class="continue-signup">Або продовжити через</p>
+                <div class="modal-social">
+                    <div class="social-card-form">
+                        <a href="#">
+                            <img src="assets/images/icons/google-icon.png" alt="Іконка Google">
+                        </a>
+                    </div>
+                    <div class="social-card-form">
+                        <a href="#">
+                            <img src="assets/images/icons/facebook-icon.png" alt="Іконка Facebook">
+                        </a>
+                    </div>
+                    <div class="social-card-form">
+                        <a href="#">
+                            <img src="assets/images/icons/apple-icon.png" alt="Іконка Apple">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="close-btn-form" id="closeBtnLogin"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
