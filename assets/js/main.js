@@ -530,6 +530,7 @@ if (appendPhoneBtn) {
             phoneNumberSpan.innerHTML = phone
             appendPhoneBtn.innerHTML = "Змінити"
             alert("Номер успішно збережено")
+            
         }
     })
 }
