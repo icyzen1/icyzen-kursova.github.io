@@ -304,6 +304,7 @@ if (regSubmitBtn) {
             if (profileError) throw profileError
 
             alert("Реєстрація успішна")
+            location.reload()
 
             document.getElementById("reg-firstname").value = ""
             document.getElementById("reg-lastname").value = ""
